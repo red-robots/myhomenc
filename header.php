@@ -22,23 +22,21 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'acstarter' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
 		<div class="wrapper">
 			
 			<?php if(is_home()) { ?>
 	            <h1 class="logo">
-	            <a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a>
+	            <a href="<?php bloginfo('url'); ?>"><img src="<?php get_template_directory_uri()."/images/logo.png"; ?>" alt="logo"></a>
 	            </h1>
 	        <?php } else { ?>
 	            <div class="logo">
-	            <a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a>
+	            <a href="<?php bloginfo('url'); ?>"><img src="<?php get_template_directory_uri()."/images/logo.png"; ?>" alt="logo"></a>
 	            </div>
 	        <?php } ?>
 
 			<nav id="site-navigation" class="main-navigation" role="navigation">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'acstarter' ); ?></button>
 				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 			</nav><!-- #site-navigation -->
 	</div><!-- wrapper -->

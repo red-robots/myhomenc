@@ -27,18 +27,34 @@
 		<div class="wrapper">
 			
 			<?php if(is_home()) { ?>
-	            <h1 class="logo">
-	            <a href="<?php bloginfo('url'); ?>"><img src="<?php get_template_directory_uri()."/images/logo.png"; ?>" alt="logo"></a>
+	            <h1 class="column-1 logo">
+	            <a href="<?php bloginfo('url'); ?>"><img src="<?php echo get_template_directory_uri()."/images/logo.png"; ?>" alt="logo"></a>
 	            </h1>
 	        <?php } else { ?>
-	            <div class="logo">
-	            <a href="<?php bloginfo('url'); ?>"><img src="<?php get_template_directory_uri()."/images/logo.png"; ?>" alt="logo"></a>
+	            <div class="column-1 logo">
+	            <a href="<?php bloginfo('url'); ?>"><img src="<?php echo get_template_directory_uri()."/images/logo.png"; ?>" alt="logo"></a>
 	            </div>
 	        <?php } ?>
-
-			<nav id="site-navigation" class="main-navigation" role="navigation">
-				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-			</nav><!-- #site-navigation -->
+			<div class="column-2">
+				<div class="row-1">
+					<?php $facebook_link = get_field("facebook_link","option");
+					$youtube_link = get_field("youtube_link","option");?>
+					<?php if($facebook_link): ?>
+						<div class="blue-box">
+							<a href="<?php echo $facebook_link;?>"><i class="fa fa-facebook"></i></a>
+						</div>
+					<?php endif;?>
+					<?php if($youtube_link):?>
+						<div class="blue-box">
+							<a href="<?php echo $youtube_link;?>"><i class="fa fa-youtube"></i></a>
+						</div>
+					<?php endif;?>
+					<?php get_search_form();?>
+				</div><!--.row-1-->
+				<nav id="site-navigation" class="row-2 main-navigation" role="navigation">
+					<?php wp_nav_menu( array( 'theme_location' => 'primary') ); ?>
+				</nav><!-- #site-navigation .row-2 -->
+			</div><!--.column-2-->
 	</div><!-- wrapper -->
 	</header><!-- #masthead -->
 

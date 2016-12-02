@@ -202,6 +202,9 @@
           font-size: 12px;
           margin: 40px 0;
           font-weight: 600;
+          @media screen and (min-width: $tabwidth) {
+            margin: 0;
+          }
           a {
             color: inherit;
             display: block;

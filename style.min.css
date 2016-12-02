@@ -761,6 +761,7 @@ html[xmlns] .flexslider .slides{display:block}
 #masthead .wrapper>.column-2>.row-2 ul li{line-height:1;display:inline-block;float:none;margin:10px 20px 0 0;font-size:14px;text-transform:uppercase}
 @media screen and (min-width:1500px){#masthead .wrapper>.column-2>.row-2 ul li{margin:10px 40px 0 0}
 }#masthead .wrapper>.column-2>.row-2 ul li a{color:inherit}
+#masthead .wrapper>.column-2>.row-2 ul li a:hover,#masthead .wrapper>.column-2>.row-2 ul li a.active{color:#159acd}
 #colophon{background-color:black;color:white;padding:40px 0 20px 0}
 @media screen and (min-width:600px){#colophon{padding:5% 8% 3% 8%}
 }#colophon .wrapper>.row-1{margin-bottom:40px}

@@ -13,14 +13,26 @@
 	<header class="row-1">
 		<h1><?php the_title( ); ?></h1>
 	</header><!-- .entry-header -->
-	<div class="row-2">
+	<section class="row-2">
 		<?php if(get_the_content()):?>
 			<div class="copy column-1">
 				<?php the_content();?>
 			</div><!--.copy-->
 		<?php endif;?>
-	</div><!--.row-2-->
-	<div class="row-3">
-
-	</div><!--.row-3-->
+		<?php $link = get_field("link");
+		$link_text = get_field("link_text");
+		if($link_text&&$link):?>
+			<div class="column-2">
+				<a href="<?php echo $link;?>" target="_blank">
+					<?php echo $link_text;?>
+				</a>
+			</div><!--.column-2-->
+		<?php endif;?>
+	</section><!--.row-2-->
+	<?php $logo = get_field("logo");
+	if($logo):?>
+		<div class="row-3">
+			<img src="<?php echo $logo['url'];?>" alt="<?php echo $logo['alt'];?>">
+		</div><!--.row-3-->
+	<?php endif;?>
 </article><!-- #post-## -->

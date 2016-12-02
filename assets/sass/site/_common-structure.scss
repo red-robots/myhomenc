@@ -131,7 +131,9 @@
             }
             a {
               color: inherit;
-
+              &:hover, &.active {
+                color:$color__mhn-bright-blue;
+              }
             }
             .sub-menu {
 

@@ -10,7 +10,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class("template-index"); ?>>
-	<div class="row-1">
+	<section class="row-1">
 		<?php $slides = get_field("slides");
 		if($slides):?>
 			<div id="slider">
@@ -50,13 +50,13 @@
 				</ul>
 			</div><!--#carousel-->
 		<?php endif;?>
-	</div><!--.row-1-->
+	</section><!--.row-1-->
 	<div class="row-2">
 		<?php $page_title = get_field("page_title");
 		$page_copy = get_field("page_copy");
 		$logos = get_field("logos");
 		if($page_copy||$page_title):?>
-			<div class="row-1">
+			<section class="row-1">
 				<?php if($page_title):?>
 					<header><h1><?php echo $page_title;?></h1></header>
 				<?php endif;?>
@@ -65,23 +65,23 @@
 						<?php echo $page_copy;?>
 					</div>
 				<?php endif;?>
-			</div><!--.row-1-->
+			</section><!--.row-1-->
 		<?php endif;?>
 		<?php if($logos):?>
-			<div class="row-2">
+			<section class="row-2">
 				<?php foreach($logos as $logo):?>
 					<div class="logo">
 						<img src="<?php echo $logo['url'];?>" alt="<?php echo $logo['alt']?>">
 					</div><!--.logo-->
 				<?php endforeach;?>
-			</div><!--.row-2-->
+			</section><!--.row-2-->
 		<?php endif;?>
 	</div><!--.row-2-->
 	<div class="row-3">
 		<?php $image_boxes = get_field("image_boxes");
 		for($i = 0;$i<count($image_boxes)&&$i<3;$i++):?>
 			<?php if($image_boxes[$i]['image']):?>
-				<div class="column-<?php echo ($i+1);?>">
+				<section class="column-<?php echo ($i+1);?>">
 					<?php if($image_boxes[$i]['link']):?>
 						<a href="<?php echo $image_boxes[$i]['link'];?>">
 					<?php endif;?>
@@ -102,7 +102,7 @@
 					<?php if($image_boxes[$i]['link']):?>
 						</a>
 					<?php endif;?>
-				</div><!--.column-#-->
+				</section><!--.column-#-->
 			<?php endif;?>
 		<?php endfor;?>
 	</div><!--.row-3-->

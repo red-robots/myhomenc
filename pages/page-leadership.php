@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying all pages.
+ * Template Name: Leadership
  *
  * This is the template that displays all pages by default.
  * Please note that this is the WordPress construct of pages
@@ -20,7 +20,7 @@ get_header(); ?>
 			<?php
 			if ( have_posts() ) : the_post();
 
-				get_template_part( 'template-parts/content', 'page' );
+				get_template_part( 'template-parts/content', 'leadership' );
 
 			endif; // End of the loop.
 			?>

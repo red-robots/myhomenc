@@ -9,33 +9,16 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+<article id="post-<?php the_ID(); ?>" <?php post_class("template-page"); ?> style="
+	<?php echo "background-image: url(".get_template_directory_uri()."/images/background.jpg);"; ?>">
+	<header class="row-1">
+		<div class="wrapper">
+			<h1><?php the_title(); ?></h1>
+		</div><!--.wrapper-->
 	</header><!-- .entry-header -->
-
-	<div class="entry-content">
-		<?php
-			the_content();
-
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'acstarter' ),
-				'after'  => '</div>',
-			) );
-		?>
-	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php
-			edit_post_link(
-				sprintf(
-					/* translators: %s: Name of current post */
-					esc_html__( 'Edit %s', 'acstarter' ),
-					the_title( '<span class="screen-reader-text">"', '"</span>', false )
-				),
-				'<span class="edit-link">',
-				'</span>'
-			);
-		?>
-	</footer><!-- .entry-footer -->
+	<?php if(get_the_content()):?>
+		<section class="row-2 copy">
+			<?php the_content();?>
+		</section><!--.row-2-->
+	<?php endif;?>
 </article><!-- #post-## -->

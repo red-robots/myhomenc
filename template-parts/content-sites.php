@@ -12,7 +12,9 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class("template-sites"); ?> style="
 	<?php echo "background-image: url(".get_template_directory_uri()."/images/background.jpg);"; ?>">
 	<header class="row-1">
-		<h1><?php the_title(); ?></h1>
+		<div class="wrapper">
+			<h1><?php the_title(); ?></h1>
+		</div><!--.wrapper-->
 	</header><!-- .entry-header -->
 	<section class="row-2 clear-bottom">
 		<?php if(get_the_content()):?>

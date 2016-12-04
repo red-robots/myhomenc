@@ -1,4 +1,4 @@
-.template-sites {
+.template-sites, .template-page, .template-news {
   background-position: top center;
   background-size: 100% auto;
   background-repeat: no-repeat;
@@ -6,17 +6,13 @@
   @media screen and (min-width: $tabwidth) {
     padding: 40px 15%;
   }
-}
-.template-sites {
   header {
     width: 100%;
     margin: 0 0 50px 0;
     padding: 0;
-    h1 {
-      margin: 0;
-      padding: 0;
+    .wrapper {
       display: inline-block;
-      &:before {
+      &:before, &:after {
         display: block;
         content: "";
         height: 0px;
@@ -24,16 +20,19 @@
         border: 2px solid $color__mhn-bright-blue;
         @include border-radius(2px);
       }
-      &:after {
-        display: block;
-        content: "";
-        height: 0px;
-        width: 100%;
-        border: 2px solid $color__mhn-bright-blue;
-        @include border-radius(2px);
+      h1 {
+        margin: 0;
+        padding: 0 8px 0 2px;
       }
     }
   }
+}
+.template-page {
+  >.row-2 {
+
+  }
+}
+.template-sites {
   >.row-2 {
     >.column-1 {
       width: 100%;

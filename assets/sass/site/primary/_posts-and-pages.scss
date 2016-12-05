@@ -89,6 +89,14 @@
         li {
           @include flexbox-flex(1,1,auto);
           color: white;
+          @media screen and (min-width: $tabwidth) {
+            @include flexbox;
+            @include flexbox-align-content(center);
+            @include flexbox-align-items(center);
+            @include flexbox-justify(center);
+            @include flexbox-wrap(nowrap);
+            @include flex-direction(column);
+          }
           &:hover,&.active {
             background-color: $color__mhn-bright-blue;
             border-top: 1px dashed grey;
@@ -111,11 +119,11 @@
             @include flexbox-wrap(nowrap);
             @include flex-direction(column);
             width: 100%;
-            height: 100%;
             margin: 0 0 0 15px;
             background-color: $color__mhn-dark-blue;
             border-top: 1px dashed grey;
             @media screen and (min-width: $tabwidth) {
+              @include flexbox-flex(1,1,auto);
               padding: 0;
             }
             span {

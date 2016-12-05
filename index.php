@@ -11,13 +11,13 @@
  *
  * @package ACStarter
  */
-
+global $wp_query;
 get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-		<?php global $wp_query;
+		<?php
 		$hold_query = $wp_query;
 		$query = new WP_Query(array('page_id'=>6));
 		$wp_query = $query;

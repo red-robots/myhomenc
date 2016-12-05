@@ -13,17 +13,19 @@
 	<section class="row-1">
 		<?php $slides = get_field("slides");
 		if($slides):?>
-			<div id="slider">
-				<ul>
+			<div id="slider" class="clear-bottom">
+				<ul class="slides">
 					<?php foreach($slides as $slide):
 						if($slide['image']):?>
 						<li>
-							<img src="<?php echo $slide['image']['url'];?>" alt="<?php echo $slide['alt']?>">
+							<img src="<?php echo $slide['image']['url'];?>" alt="<?php echo $slide['image']['alt']?>">
 							<?php if($slide['title']||$slide['copy']):?>
 								<div class="info">
 									<?php if($slide['title']):?>
 										<header>
-											<h2><?php echo $slide['title'];?></h2>
+											<div class="wrapper">
+												<h2><?php echo $slide['title'];?></h2>
+											</div><!--.wrapper-->
 										</header>
 									<?php endif;?>
 									<?php if($slide['copy']):?>
@@ -38,20 +40,22 @@
 					endforeach;?>
 				</ul>
 			</div><!--#slider-->
-			<div id="carousel">
-				<ul>
+			<nav id="carousel">
+				<ul class="slides">
 					<?php foreach($slides as $slide):?>
-						<li>
-							<?php if($slide['title']):?>
-								<span><?php echo $slide['title'];?></span>
-							<?php endif;?>
-						</li>
+						<?php if($slide['title']):?>
+							<li class="slide">
+								<div class="wrapper">
+									<span><?php echo $slide['title'];?></span>
+								</div><!--.wrapper-->
+							</li>
+						<?php endif;?>
 					<?php endforeach;?>
 				</ul>
-			</div><!--#carousel-->
+			</nav><!--#carousel-->
 		<?php endif;?>
 	</section><!--.row-1-->
-	<div class="row-2">
+	<div class="row-2 clear-bottom">
 		<?php $page_title = get_field("page_title");
 		$page_copy = get_field("page_copy");
 		$logos = get_field("logos");
@@ -70,26 +74,40 @@
 		<?php if($logos):?>
 			<section class="row-2">
 				<?php foreach($logos as $logo):?>
-					<div class="logo">
-						<img src="<?php echo $logo['url'];?>" alt="<?php echo $logo['alt']?>">
-					</div><!--.logo-->
+					<?php if($logo['image']):?>
+						<div class="logo">
+							<?php if($logo['link']):?>
+								<a href="<?php echo $logo['link'];?>">
+							<?php endif;?>
+							<img src="<?php echo $logo['image']['url'];?>" alt="<?php echo $logo['image']['alt']?>">
+							<?php if($logo['link']):?>
+								</a>
+							<?php endif;?>
+						</div><!--.logo-->
+					<?php endif;?>
 				<?php endforeach;?>
 			</section><!--.row-2-->
 		<?php endif;?>
 	</div><!--.row-2-->
-	<div class="row-3">
+	<div class="row-3 clear-bottom">
 		<?php $image_boxes = get_field("image_boxes");
-		for($i = 0;$i<count($image_boxes)&&$i<3;$i++):?>
+		for($i = 0;$i<count($image_boxes)&&count($image_boxes)>2&&$i<3;$i++):?>
 			<?php if($image_boxes[$i]['image']):?>
 				<section class="column-<?php echo ($i+1);?>">
-					<?php if($image_boxes[$i]['link']):?>
-						<a href="<?php echo $image_boxes[$i]['link'];?>">
-					<?php endif;?>
+					<?php if($image_boxes[$i]['video_link']):?>
+						<a class="colorbox-video" href="<?php echo $image_boxes[$i]['video_link'];?>">
+					<?php else:
+						if($image_boxes[$i]['link']):?>
+							<a href="<?php echo $image_boxes[$i]['link'];?>">
+						<?php endif;
+					endif;?>
 					<img src="<?php echo $image_boxes[$i]['image']['url'];?>" alt="<?php echo $image_boxes[$i]['image']['alt'];?>">
 					<?php if($image_boxes[$i]['title']||$image_boxes[$i]['copy']||$image_boxes[$i]['link_text']):?>
 						<div class="info">
 							<?php if($image_boxes[$i]['title']):?>
-								<h2><?php echo $image_boxes[$i]['title'];?></h2>
+								<header>
+									<h2><?php echo $image_boxes[$i]['title'];?></h2>
+								</header>
 							<?php endif;?>
 							<?php if($image_boxes[$i]['copy']):?>
 								<div class="copy"><?php echo $image_boxes[$i]['copy'];?></div><!--.copy-->
@@ -99,7 +117,7 @@
 							<?php endif;?>
 						</div><!--.info-->
 					<?php endif;?>
-					<?php if($image_boxes[$i]['link']):?>
+					<?php if($image_boxes[$i]['link']||$image_boxes[$i]['video_link']):?>
 						</a>
 					<?php endif;?>
 				</section><!--.column-#-->

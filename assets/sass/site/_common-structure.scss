@@ -68,23 +68,24 @@ h3 {
     }
   }
 }
-
 #masthead {
   padding: 20px 5% 25px 5%;
   background-color: black;
   color: white;
   .wrapper {
-      @include flexbox;
-      @include flexbox-align-content(stretch);
-      @include flexbox-align-items(stretch);
-      @include flexbox-justify(space-between);
-      @include flexbox-wrap(nowrap);
+      @media screen and (min-width: $tabwidth) {
+        @include flexbox;
+        @include flexbox-align-content(stretch);
+        @include flexbox-align-items(stretch);
+        @include flexbox-justify(space-between);
+        @include flexbox-wrap(nowrap);
+      }
     > .column-1 {
-        width: 30%;
+        width: 100%;
         margin: 0;
         padding: 0;
-        @include flexbox-flex(0, 0, auto);
       @media screen and (min-width: $tabwidth) {
+        @include flexbox-flex(0, 0, auto);
         width: 19%;
         padding: 0 100px 0 0;
         min-width: 210px;
@@ -92,13 +93,41 @@ h3 {
       @media screen and (min-width: 1200px) {
         padding: 0 9% 0 0;
       }
-
+      &:after {
+        clear:both;
+        display: block;
+        content: "";
+        @media screen and (min-width: $tabwidth) {
+          display: none;
+        }
+      }
+      h1 {
+        margin: 0;
+      }
       a {
         display: block;
         color: inherit;
         img {
           display: block;
+          width: 30%;
+          float: left;
+          @media screen and (min-width: $tabwidth) {
             width: 100%;
+            float: none;
+          }
+        }
+      }
+      .hamburger {
+        display: block;
+        width: 12%;
+        float: right;
+        margin-top: 8%;
+        @media screen and (min-width: $tabwidth) {
+          display: none;
+        }
+        img {
+          width: 100%;
+          display: block;
         }
       }
     }
@@ -115,11 +144,17 @@ h3 {
         @include flexbox-wrap(nowrap);
         @include flexbox-direction(column);
       }
+      &.toggled-on {
+        display: block;
+      }
       >.row-1 {
+        text-align: center;
+        margin: 20px 0 0 0;
         @media screen and (min-width: $tabwidth) {
           width: 100%;
           @include flexbox-flex(1, 1, auto);
           text-align: right;
+          margin: 0;
         }
         .blue-box {
           width:30px;
@@ -191,12 +226,17 @@ h3 {
           text-align: center;
           line-height: 1;
           li {
+            display: block;
             line-height: 1;
-            display: inline-block;
             float: none;
-            margin: 10px 20px 0 0;
-            font-size: 14px;
+            margin: 15px 0 0 0;
+            font-size: 18px;
             text-transform: uppercase;
+            @media screen and (min-width: $tabwidth) {
+              display: inline-block;
+              margin: 10px 20px 0 0;
+              font-size: 14px;
+            }
             @media screen and (min-width: 1500px) {
               margin: 10px 40px 0 0;
             }

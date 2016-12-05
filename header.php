@@ -27,12 +27,20 @@
 		<div class="wrapper">
 			
 			<?php if(is_home()) { ?>
-	            <h1 class="column-1 logo">
-	            <a href="<?php bloginfo('url'); ?>"><img src="<?php echo get_template_directory_uri()."/images/logo.png"; ?>" alt="logo"></a>
-	            </h1>
+	            <div class="column-1 logo">
+	                <h1>
+		                <a href="<?php bloginfo('url'); ?>"><img src="<?php echo get_template_directory_uri()."/images/logo.png"; ?>" alt="logo"></a>
+					</h1>
+		            <div class="hamburger">
+			            <img src="<?php echo get_template_directory_uri()."/images/hamburger.jpg"; ?>" alt="hamburger">
+		            </div><!--.hamburger-->
+	            </div>
 	        <?php } else { ?>
 	            <div class="column-1 logo">
-	            <a href="<?php bloginfo('url'); ?>"><img src="<?php echo get_template_directory_uri()."/images/logo.png"; ?>" alt="logo"></a>
+	                <a href="<?php bloginfo('url'); ?>"><img src="<?php echo get_template_directory_uri()."/images/logo.png"; ?>" alt="logo"></a>
+		            <div class="hamburger">
+			            <img src="<?php echo get_template_directory_uri()."/images/hamburger.jpg"; ?>" alt="hamburger">
+		            </div><!--.hamburger-->
 	            </div>
 	        <?php } ?>
 			<div class="column-2">

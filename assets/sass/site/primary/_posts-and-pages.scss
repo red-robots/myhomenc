@@ -1,3 +1,317 @@
+.template-index {
+  #slider,#carousel {
+    .flex-next,.flex-prev {
+      display: none;
+    }
+  }
+  >.row-1 {
+    position: relative;
+    #slider {
+      width: 100%;
+      ul.slides {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        li {
+          position: relative;
+          img {
+            display: block;
+            width: 150%;
+            height: auto;
+            max-width: 200%;
+            @media screen and (min-width: 750px) {
+              width: 100%;
+              height: auto;
+            }
+          }
+          .info {
+            padding: 15px 25px;
+            @media screen and (min-width: $tabwidth) {
+              @include border-radius(10px);
+              background-color: rgba(255, 255, 255, 0.8);
+              position: absolute;
+              top: 50%;
+              left: 10%;
+              width: 50%;
+              height: auto;
+              padding: 25px 30px;
+              @include translateY(-50%);
+            }
+            header {
+              margin: 0 0 8px 0;
+              > .wrapper {
+                display: inline-block;
+                &:after {
+                  display: block;
+                  content: "";
+                  height: 0px;
+                  width: 100%;
+                  border: 1px solid $color__mhn-bright-blue;
+                  @include border-radius(1px);
+                }
+                h2 {
+                  line-height: 1.5;
+                  margin: 0;
+                  font-size: 30px;
+                  padding: 0 20px 0 2px;
+                }
+              }
+            }
+            .copy {
+            }
+          }
+        }
+      }
+    }
+    #carousel {
+      @media screen and (min-width: $tabwidth) {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 2;
+        height: 100%;
+        width: 30%;
+      }
+      @media screen and (min-width: 800px) {
+        width: 25%;
+      }
+      @media screen and (min-width: 1100px) {
+        width: 18%;
+      }
+      ul.slides {
+        height: 100%;
+        @include flexbox;
+        @include flexbox-align-content(stretch);
+        @include flexbox-align-items(stretch);
+        @include flexbox-justify(center);
+        @include flexbox-wrap(nowrap);
+        @include flex-direction(column);
+        li {
+          @include flexbox-flex(1,1,auto);
+          color: white;
+          &:hover,&.active {
+            background-color: $color__mhn-bright-blue;
+            border-top: 1px dashed grey;
+            >.wrapper {
+              border-top: none;
+              background-color: $color__mhn-bright-blue;
+            }
+          }
+          &:first-child {
+            >.wrapper {
+              border-top: none;
+            }
+          }
+          >.wrapper {
+            padding: 20px 0;
+            @include flexbox;
+            @include flexbox-align-content(center);
+            @include flexbox-align-items(center);
+            @include flexbox-justify(center);
+            @include flexbox-wrap(nowrap);
+            @include flex-direction(column);
+            width: 100%;
+            height: 100%;
+            margin: 0 0 0 15px;
+            background-color: $color__mhn-dark-blue;
+            border-top: 1px dashed grey;
+            @media screen and (min-width: $tabwidth) {
+              padding: 0;
+            }
+            span {
+              display: block;
+              width: 70%;
+              font-weight: 500;
+            }
+          }
+        }
+      }
+    }
+  }
+  >.row-2 {
+    padding: 20px;
+    @media screen and (min-width: $tabwidth) {
+      padding: 7% 9%;
+    }
+    >.row-1 {
+      text-align: center;
+      margin: 0 auto;
+      width: 90%;
+      @media screen and (min-width: $tinywidth) {
+        width: 80%;
+      }
+      @media screen and (min-width: $tabwidth) {
+        width: 60%;
+      }
+      @media screen and (min-width: 1200px) {
+        width: 50%;
+      }
+      header {
+        margin: 0 0 10px 0;
+        &:after {
+          display: block;
+          content: "";
+          height: 0px;
+          width: 60px;
+          margin: 5px auto 0 auto;
+          border: 2px solid $color__mhn-bright-blue;
+          @include border-radius(2px);
+        }
+        h1 {
+          font-size: 22px;
+          font-weight: 300;
+          margin: 0;
+        }
+      }
+      .copy {
+
+      }
+    }
+    >.row-2 {
+      margin: 10px 0 0 0;
+      @media screen and (min-width: $tabwidth) {
+        margin: 40px auto 0 auto;
+        display: table;
+      }
+      .logo {
+        display: block;
+        width: 90%;
+        margin: 10px auto 0 auto;
+        @media screen and (min-width: $tabwidth) {
+          width: 47.5%;
+          margin: 10px 5% 0 0;
+          float: left;
+          &:nth-child(even) {
+            margin: 10px 0 0 0;
+          }
+        }
+        @media screen and (min-width: 900px) {
+          width: 19.75%;
+          margin: 10px 7% 0 0;
+          &:nth-child(even) {
+            margin: 10px 7% 0 0;
+          }
+          &:last-child {
+            margin: 10px 0 0 0;
+          }
+        }
+        a {
+          display: block;
+        }
+          img {
+            display: block;
+            width: 100%;
+          }
+      }
+    }
+  }
+  >.row-3 {
+    .column-1, .column-2, .column-3 {
+      position: relative;
+      margin: 0;
+      color: white;
+      width: 100%;
+      @media screen and (min-width: $tabwidth) {
+        float: left;
+        width: (1/3)*100%;
+      }
+      a {
+        display: block;
+        color: inherit;
+        text-decoration: none;
+      }
+      img {
+        width: 100%;
+        display: block;
+      }
+      .info {
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: auto;
+        left: 0;
+        bottom: 0;
+        padding: 0 10px 10px 10px;
+        @media screen and (min-width: 350px) {
+          padding:  0 30px 20px 30px;
+        }
+        @media screen and (min-width: $tabwidth) {
+          padding: 0 10px 10px 10px;
+        }
+        @media screen and (min-width: 800px) {
+          padding: 0 20px 20px 20px;
+        }
+        @media screen and (min-width: 900px) {
+          padding:  0 30px 20px 30px;
+        }
+        header {
+          &:after {
+            display: block;
+            content: "";
+            height: 0px;
+            width: 60px;
+            margin: 3px auto 0 0;
+            border: 2px solid $color__mhn-bright-blue;
+            @include border-radius(2px);
+          }
+          h2 {
+            margin: 0;
+            font-size: 12px;
+            font-weight: 300;
+            text-transform: uppercase;
+            @media screen and (min-width: 350px) {
+              font-size: 14px;
+            }
+            @media screen and (min-width: $tabwidth) {
+              font-size: 12px;
+            }
+            @media screen and (min-width: 1100px) {
+              font-size: 14px;
+            }
+          }
+        }
+        .copy {
+          font-weight: 500;
+          font-size: 18px;
+          margin: 10px 0 0 0;
+          @media screen and (min-width: 350px) {
+            margin: 20px 0 0 0;
+            font-size: 22px;
+          }
+          @media screen and (min-width: $tabwidth) {
+            font-size: 14px;
+            margin: 5px 0 0 0;
+          }
+          @media screen and (min-width: 700px) {
+            margin: 10px 0 0 0;
+            font-size: 16px;
+          }
+          @media screen and (min-width: 1100px) {
+            margin: 20px 0 0 0;
+            font-size: 22px;
+          }
+        }
+        .link {
+          margin: 10px 0 0 0;
+          text-transform: uppercase;
+          font-size: 14px;
+          @media screen and (min-width: 350px) {
+            font-size: 16px;
+            margin: 20px 0 0 0;
+          }
+          @media screen and (min-width: $tabwidth) {
+            font-size: 12px;
+            margin: 5px 0 0 0;
+          }
+          @media screen and (min-width: 1100px) {
+            font-size: 16px;
+            margin: 20px 0 0 0;
+          }
+        }
+      }
+    }
+  }
+}
 .template-sites, .template-page, .template-news {
   background-position: top center;
   background-size: 100% auto;
@@ -10,7 +324,7 @@
     width: 100%;
     margin: 0 0 50px 0;
     padding: 0;
-    .wrapper {
+    > .wrapper {
       display: inline-block;
       &:before, &:after {
         display: block;

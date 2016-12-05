@@ -66,3 +66,9 @@
   -moz-border-radius:$value;
   border-radius: $value;
 }
+
+@mixin translateY($value){
+  -webkit-transform: translateY($value);
+  -moz-transform: translateY($value);
+  transform: translateY($value);
+}

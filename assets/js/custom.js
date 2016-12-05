@@ -24,22 +24,23 @@ jQuery(document).ready(function ($) {
 	*
 	------------------------------------*/
     // The slider being synced must be initialized first
-    $('#carousel').flexslider({
-        animation: "slide",
-        controlNav: false,
-        animationLoop: false,
-        slideshow: false,
-        itemWidth: 210,
-        itemMargin: 0,
-        asNavFor: '#slider'
-    });
+
 
     $('#slider').flexslider({
         animation: "fade",
         controlNav: false,
         animationLoop: false,
-        slideshow: false,
-        sync: "#carousel"
+        slideshow: false
+    });
+
+    $sliderdata = $('#slider').data('flexslider');
+    $('#carousel .slides .slide').eq(0).addClass("active");
+    $('#carousel .slides .slide').click(function(){
+        var $this = $(this);
+        $slides = $('#carousel .slides .slide');
+        $slides.removeClass("active");
+        $this.addClass("active");
+        $sliderdata.flexAnimate($this.index());
     });
 	
 	/*
@@ -47,8 +48,8 @@ jQuery(document).ready(function ($) {
 	*	Colorbox
 	*
 	------------------------------------*/
-	$('a.gallery').colorbox({
-		rel:'gal',
+	$('a.colorbox-video').colorbox({
+		iframe: true,
 		width: '80%', 
 		height: '80%'
 	});
@@ -82,5 +83,15 @@ jQuery(document).ready(function ($) {
 	*
 	------------------------------------*/
 	new WOW().init();
+
+    $('#masthead >.wrapper >.column-1 >.hamburger').click(function(){
+        if($('#masthead >.wrapper  >.column-1 >.hamburger').hasClass("toggled-on")){
+            $('#masthead >.wrapper >.column-2').removeClass("toggled-on");
+            $('#masthead >.wrapper  >.column-1 >.hamburger').removeClass("toggled-on");
+        } else {
+            $('#masthead >.wrapper >.column-2').addClass("toggled-on");
+            $('#masthead >.wrapper  >.column-1 >.hamburger').addClass("toggled-on");
+        }
+    });
 
 });// END #####################################    END

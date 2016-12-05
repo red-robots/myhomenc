@@ -17,17 +17,17 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-		<?php
+		<?php global $wp_query;
+		$hold_query = $wp_query;
+		$query = new WP_Query(array('page_id'=>6));
+		$wp_query = $query;
 		if ( have_posts() ) : the_post();
 
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
 				get_template_part( 'template-parts/content', "index");
 
-		endif; ?>
+		endif;
+		$wp_query = $hold_query;
+		?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

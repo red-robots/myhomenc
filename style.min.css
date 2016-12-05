@@ -802,7 +802,7 @@ h3{font-size:15px}
 #colophon .wrapper>.row-1>.column-1>.row-1 .office-address,#colophon .wrapper>.row-1>.column-1>.row-2 .office-address,#colophon .wrapper>.row-1>.column-1>.row-3 .office-address{font-size:14px}
 #colophon .wrapper>.row-1>.column-2{text-align:center}
 @media screen and (min-width:600px){#colophon .wrapper>.row-1>.column-2{width:33.33333%;-webkit-box-flex:0 1 auto;-webkit-flex:0 1 auto;-ms-flex:0 1 auto;flex:0 1 auto}
-}#colophon .wrapper>.row-1>.column-2 .newsletter-signup{display:inline-block;background-color:#323d5a;border-radius:3px;padding:15px;text-transform:capitalize;font-size:12px;margin:40px 0;font-weight:600}
+}#colophon .wrapper>.row-1>.column-2 .newsletter-signup{display:inline-block;background-color:#3855a3;border-radius:3px;padding:15px;text-transform:capitalize;font-size:12px;margin:40px 0;font-weight:600}
 @media screen and (min-width:600px){#colophon .wrapper>.row-1>.column-2 .newsletter-signup{margin:0}
 }#colophon .wrapper>.row-1>.column-2 .newsletter-signup a{color:inherit;display:block;text-align:center;text-decoration:none}
 @media screen and (min-width:600px){#colophon .wrapper>.row-1>.column-3{width:33.33333%;-webkit-box-flex:0 1 auto;-webkit-flex:0 1 auto;-ms-flex:0 1 auto;flex:0 1 auto}
@@ -848,10 +848,10 @@ h3{font-size:15px}
 .template-index>.row-1 #carousel ul.slides li:hover,.template-index>.row-1 #carousel ul.slides li.active{background-color:#159acd;border-top:1px dashed grey}
 .template-index>.row-1 #carousel ul.slides li:hover>.wrapper,.template-index>.row-1 #carousel ul.slides li.active>.wrapper{border-top:0;background-color:#159acd}
 .template-index>.row-1 #carousel ul.slides li:first-child>.wrapper{border-top:0}
-.template-index>.row-1 #carousel ul.slides li>.wrapper{padding:20px 0;display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-align-content:center;-ms-flex-line-pack:center;align-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-justify-content:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-flex-wrap:nowrap;-ms-flex-wrap:nowrap;flex-wrap:nowrap;-webkit-box-orient:vertical;box-orient:vertical;-webkit-box-direction:normal;box-direction:normal;-webkit-flex-direction:column;-moz-flex-direction:column;flex-direction:column;-ms-flex-direction:column;width:100%;height:100%;margin:0 0 0 15px;background-color:#323d5a;border-top:1px dashed grey}
+.template-index>.row-1 #carousel ul.slides li>.wrapper{padding:20px 0;display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-align-content:center;-ms-flex-line-pack:center;align-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-justify-content:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-flex-wrap:nowrap;-ms-flex-wrap:nowrap;flex-wrap:nowrap;-webkit-box-orient:vertical;box-orient:vertical;-webkit-box-direction:normal;box-direction:normal;-webkit-flex-direction:column;-moz-flex-direction:column;flex-direction:column;-ms-flex-direction:column;width:100%;height:100%;margin:0 0 0 15px;background-color:#3855a3;border-top:1px dashed grey}
 @media screen and (min-width:600px){.template-index>.row-1 #carousel ul.slides li>.wrapper{padding:0}
 }.template-index>.row-1 #carousel ul.slides li>.wrapper span{display:block;width:70%;font-weight:500}
-.template-index>.row-2{padding:20px}
+.template-index>.row-2{padding:20px;background-color:#ededed}
 @media screen and (min-width:600px){.template-index>.row-2{padding:7% 9%}
 }.template-index>.row-2>.row-1{text-align:center;margin:0 auto;width:90%}
 @media screen and (min-width:300px){.template-index>.row-2>.row-1{width:80%}

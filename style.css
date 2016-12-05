@@ -3782,7 +3782,7 @@ h3 {
       #colophon .wrapper > .row-1 > .column-1 > .row-1:last-child, #colophon .wrapper > .row-1 > .column-1 > .row-2:last-child, #colophon .wrapper > .row-1 > .column-1 > .row-3:last-child {
         margin: 0; }
       #colophon .wrapper > .row-1 > .column-1 > .row-1 .office-title, #colophon .wrapper > .row-1 > .column-1 > .row-2 .office-title, #colophon .wrapper > .row-1 > .column-1 > .row-3 .office-title {
-        font-size: 14px;
+        font-size: 16px;
         color: #159acd;
         text-transform: capitalize;
         font-weight: 600; }

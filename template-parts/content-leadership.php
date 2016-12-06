@@ -45,7 +45,7 @@
 							<?php endif;?>
 							<?php if($email):?>
 								<div class="email">
-									<a href="<?php echo $email;?>" target="_blank">
+									<a href="<?php echo "mailto:".$email;?>" target="_blank">
 										<i class="fa fa-envelope"></i>
 									</a>
 								</div><!--.title-->

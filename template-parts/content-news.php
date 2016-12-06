@@ -20,35 +20,25 @@
 		<?php $paged= $paged === 0?1:$paged;
 		$args = array('post_type'=>'post',"posts_per_page"=>8,"paged"=>$paged,"order"=>"DESC");
 		$query = new WP_Query($args);
-		if($query->have_posts()):?>
-			<div class="wrapper">
-				<?php while($query->have_posts()):$query->the_post();
-					$iamge = get_field("image");
-					$title = get_field("title");
-					$phone = get_field("phone");
-					$email = get_field("email"); ?>
-					<div class="leader js-blocks">
-						<img src="<?php echo $image['url'];?>" alt="<?php echo $image['alt'];?>">
-						<div class="info">
-							<h3><?php echo the_title();?></h3>
-							<?php if($title):?>
-								<div class="title"><?php echo $title;?></div><!--.title-->
-							<?php endif;?>
-							<?php if($phone):?>
-								<div class="phone"><?php echo $phone;?></div><!--.phone-->
-							<?php endif;?>
-							<?php if($email):?>
-								<div class="email">
-									<a href="<?php echo $email;?>" target="_blank">
-										<i class="fa fa-envelope"></i>
-									</a>
-								</div><!--.title-->
-							<?php endif;?>
-						</div><!--.info-->
-					</div><!--.leader-->
+		if($query->have_posts()):
+			$count=0;?>
+			<div class="wrapper clear-bottom">
+				<?php while($query->have_posts()):$query->the_post();?>
+					<?php $image = get_field("image");
+					if($image):?>
+						<div class="news js-blocks count-<?php echo $count%3;?>">
+							<a href="<?php echo get_the_permalink();?>">
+								<img src="<?php echo $image['url'];?>" alt="<?php echo $image['alt'];?>">
+								<header>
+									<h2><?php the_title();?></h2>
+								</header>
+							</a>
+						</div><!--.news-->
+						<?php $count++;
+					endif;?>
 				<?php endwhile;?>
 			</div><!--.wrapper-->
-			<nav class="pagination">
+			<nav class="pagination clear-bottom">
 				<?php pagi_posts_nav($query);?>
 			</nav>
 		<?php wp_reset_postdata();

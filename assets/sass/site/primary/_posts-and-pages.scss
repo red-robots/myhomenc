@@ -54,6 +54,12 @@
                   margin: 0;
                   font-size: 30px;
                   padding: 0 20px 0 2px;
+                  @media screen and (min-width: $tabwidth) {
+                    font-size: 25px;
+                  }
+                  @media screen and (min-width: 700px) {
+                    font-size: 30px;
+                  }
                 }
               }
             }
@@ -106,12 +112,13 @@
             }
           }
           &:first-child {
+            border-top: none;
             >.wrapper {
               border-top: none;
             }
           }
           >.wrapper {
-            padding: 20px 0;
+            padding: 20px;
             width: 100%;
             margin: 0 0 0 15px;
             background-color: $color__mhn-dark-blue;
@@ -321,7 +328,7 @@
     }
   }
 }
-.template-sites, .template-page, .template-news {
+.template-sites, .template-page, .template-news, .template-news-single, .template-leadership {
   background-position: top center;
   background-size: 100% auto;
   background-repeat: no-repeat;
@@ -329,16 +336,19 @@
   @media screen and (min-width: $tabwidth) {
     padding: 40px 15%;
   }
-  header {
+  > header {
     width: 100%;
-    margin: 0 0 50px 0;
+    margin: 0 0 15px 0;
     padding: 0;
+    @media screen and (min-width: $tabwidth) {
+      margin: 0 0 40px 0;
+    }
     > .wrapper {
       display: inline-block;
       &:before, &:after {
         display: block;
         content: "";
-        height: 0px;
+        height: 0;
         width: 100%;
         border: 2px solid $color__mhn-bright-blue;
         @include border-radius(2px);
@@ -346,6 +356,142 @@
       h1 {
         margin: 0;
         padding: 0 8px 0 2px;
+        line-height: 1.7;
+        font-size: 24px;
+        @media screen and (min-width: $tabwidth) {
+          font-size: 34px;
+        }
+      }
+    }
+  }
+}
+.template-news {
+  >.row-2 {
+    >.wrapper {
+      .news {
+        margin: 20px 0 0 0;
+        width: 100%;
+        @media screen and (min-width: $tabwidth) {
+          width: (1/3)*97%;
+          float: left;
+          margin: 1.5% 1.5% 0 0;
+        }
+        &:first-child {
+          margin: 15px 0 0 0;
+          @media screen and (min-width: $tabwidth) {
+            margin: 1.5% 1.5% 0 0;
+          }
+        }
+        &.count-2 {
+          @media screen and (min-width: $tabwidth) {
+            margin-right: 0;
+          }
+        }
+        a {
+          display: block;
+          text-decoration: none;
+          color: inherit;
+          img {
+            width: 100%;
+            display: block;
+          }
+          header {
+            margin-top: 5px;
+            h2 {
+              margin: 0;
+              font-size: 16px;
+              text-transform: capitalize;
+              color: $color__mhn-bright-blue;
+              @media screen and (min-width: 350px) {
+                font-size: 18px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .pagination {
+
+    }
+  }
+}
+.template-news-single {
+  >.row-2 {
+    .column-1 {
+      @media screen and (min-width: $tabwidth) {
+        width: 60%;
+        float: left;
+        padding: 0 30px 0 0;
+      }
+      @media screen and (min-width: 900px) {
+        width: 70%;
+        padding: 0 40px 0 0;
+      }
+    }
+    .column-2 {
+      background-color: $color__mhn-grey;
+      padding: 30px 25px 50px 25px;
+      @media screen and (min-width: $tabwidth) {
+        width: 40%;
+        float: left;
+      }
+      @media screen and (min-width: 900px) {
+        width: 30%;
+      }
+      > header {
+        > .wrapper {
+          display: inline-block;
+          &:after {
+            display: block;
+            content: "";
+            height: 0;
+            width: 100%;
+            border: 2px solid $color__mhn-bright-blue;
+            @include border-radius(2px);
+          }
+          h2 {
+            margin: 0;
+            padding: 0 8px 0 2px;
+            line-height: 1.7;
+            font-size: 14px;
+            font-weight: 300;
+            text-transform: uppercase;
+            @media screen and (min-width: 350px) {
+              font-size: 18px;
+            }
+          }
+        }
+      }
+      .news {
+        margin: 20px 0 0 0;
+        width: 100%;
+        &:first-child {
+          margin: 0;
+        }
+        a {
+          display: block;
+          text-decoration: none;
+          color: inherit;
+          img {
+            width: 100%;
+            display: block;
+          }
+          header {
+            margin-top: 5px;
+            h2 {
+              margin: 0;
+              font-size: 12px;
+              text-transform: capitalize;
+              color: $color__mhn-bright-blue;
+              @media screen and (min-width: 350px) {
+                font-size: 14px;
+              }
+              @media screen and (min-width: 1300px) {
+                font-size: 18px;
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -394,6 +540,7 @@
             padding: 0 40px 0 0;
             font-weight: 500;
             font-size: 20px;
+            text-transform: capitalize;
           }
           > .column-2 {
             @include flexbox-flex(0, 0, auto);

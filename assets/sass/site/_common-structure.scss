@@ -49,7 +49,8 @@ h3 {
     font-size: 30px;
   }
   h2 {
-    font-size: 17px;
+    font-size: 15px;
+    color: $color__mhn-bright-blue;
   }
   h3 {
     font-size: 15px;
@@ -71,6 +72,7 @@ h3 {
 #masthead {
   padding: 20px 5% 25px 5%;
   background-color: black;
+  border-top: 2px solid $color__mhn-bright-blue;
   color: white;
   .wrapper {
       @media screen and (min-width: $tabwidth) {
@@ -432,10 +434,16 @@ h3 {
           a {
             color:inherit;
             text-decoration: none;
+            text-transform: lowercase;
+            font-weight: 500;
             &:before {
               content: "|";
               display: inline-block;
               margin: 0 5px;
+              color: grey;
+            }
+            &:hover {
+              color: white;
             }
           }
         }

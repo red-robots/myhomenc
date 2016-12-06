@@ -54,7 +54,7 @@
 					</div><!--.leader-->
 				<?php endwhile;?>
 			</div><!--.wrapper-->
-			<nav class="pagination">
+			<nav class="pagination clear-bottom">
 				<?php pagi_posts_nav($query);?>
 			</nav>
 		<?php wp_reset_postdata();

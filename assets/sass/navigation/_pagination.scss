@@ -1,10 +1,10 @@
 /* Pagination
 -------------------------------------------------------------- */
 .navigation {
-	width: 100%;
-	margin: 20px 0 30px 0;
+	width: auto;
+    display: table;
+	margin: 10px auto 30px auto;
 	clear: both;
-	float: left;
 
 	& ul {
 		margin: 0;
@@ -12,8 +12,8 @@
 	}
 
 	& li {
-		margin: 0;
-		display: inline;
+		margin: 10px 0 0 0;
+		display: inline-block;
 		list-style: none;
 	}
 }
@@ -29,15 +29,16 @@
 .navigation li a:hover,
 .navigation li.active a,
 .navigation li.disabled {
-	background-color: #FAD827;
+	background-color: $color__mhn-dark-blue;
 	border-radius: 3px;
 	cursor: pointer;
 	padding: 12px;
 	padding: 0.75rem;
 	@include transition(.3s ease all);
+    display: block;
 }
  
 .navigation li a:hover,
 .navigation li.active a {
-	background-color: #F47A21;
+	background-color: $color__mhn-bright-blue;
 }

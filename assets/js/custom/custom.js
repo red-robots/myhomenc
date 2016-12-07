@@ -25,22 +25,33 @@ jQuery(document).ready(function ($) {
 	------------------------------------*/
     // The slider being synced must be initialized first
 
-
+    $slides = $('#carousel .slides .slide');
+    $slides.eq(0).addClass("active");
     $('#slider').flexslider({
-        animation: "fade",
+        animation: "slide",
         controlNav: false,
-        animationLoop: false,
-        slideshow: false
+        animationLoop: true,
+        slideshow: true,
+        before: function(){
+            $active_slide = $('#slider').find('ul.slides > li.flex-active-slide');
+            var max_slides = $('#slider').find('ul.slides > li').not('.clone').length;
+            var index = $('#slider').find('ul.slides > li').not('.clone').index($active_slide);
+            if(max_slides>1) {
+                $slides.removeClass("active");
+                index = (index + 1) === max_slides ? 0 : index + 1;
+                $slides.eq(index).addClass("active");
+            }
+        },
+        slideshowSpeed: 4000
     });
-
     $sliderdata = $('#slider').data('flexslider');
-    $('#carousel .slides .slide').eq(0).addClass("active");
-    $('#carousel .slides .slide').click(function(){
+    $slides.click(function(){
         var $this = $(this);
         $slides = $('#carousel .slides .slide');
         $slides.removeClass("active");
         $this.addClass("active");
         $sliderdata.flexAnimate($this.index());
+        $sliderdata.pause();
     });
 	
 	/*

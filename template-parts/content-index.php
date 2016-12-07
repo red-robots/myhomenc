@@ -55,7 +55,7 @@
 			</nav><!--#carousel-->
 		<?php endif;?>
 	</section><!--.row-1-->
-	<div class="row-2 clear-bottom">
+	<div class="row-2">
 		<?php $page_title = get_field("page_title");
 		$page_copy = get_field("page_copy");
 		$logos = get_field("logos");
@@ -71,11 +71,12 @@
 				<?php endif;?>
 			</section><!--.row-1-->
 		<?php endif;?>
+	</div><!--.row-2-->
 		<?php if($logos):?>
-			<section class="row-2">
+			<section class="row-3">
 				<?php foreach($logos as $logo):?>
 					<?php if($logo['image']):?>
-						<div class="logo">
+						<div class="logo" style="background-image:url(<?php  echo $logo['image']['url'];?>);">
 							<?php if($logo['link']):?>
 								<a href="<?php echo $logo['link'];?>">
 							<?php endif;?>
@@ -86,10 +87,9 @@
 						</div><!--.logo-->
 					<?php endif;?>
 				<?php endforeach;?>
-			</section><!--.row-2-->
+			</section><!--.row-3-->
 		<?php endif;?>
-	</div><!--.row-2-->
-	<div class="row-3 clear-bottom">
+	<div class="row-4 clear-bottom">
 		<?php $image_boxes = get_field("image_boxes");
 		for($i = 0;$i<count($image_boxes)&&count($image_boxes)>2&&$i<3;$i++):?>
 			<?php if($image_boxes[$i]['image']):?>
@@ -123,5 +123,5 @@
 				</section><!--.column-#-->
 			<?php endif;?>
 		<?php endfor;?>
-	</div><!--.row-3-->
+	</div><!--.row-4-->
 </article><!-- #post-## -->

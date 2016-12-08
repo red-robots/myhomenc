@@ -16,12 +16,10 @@
 			<h1><?php the_title(); ?></h1>
 		</div><!--.wrapper-->
 	</header><!-- .entry-header -->
-	<?php if(get_the_content()):?>
 		<section class="row-2 copy">
 			<?php the_content();?>
 			<nav class="sitemap">
 				<?php wp_nav_menu( array( 'theme_location' => 'sitemap' ) ); ?>
 			</nav>
 		</section><!--.row-2-->
-	<?php endif;?>
 </article><!-- #post-## -->

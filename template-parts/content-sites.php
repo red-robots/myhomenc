@@ -18,8 +18,16 @@
 	</header><!-- .entry-header -->
 	<section class="row-2 clear-bottom">
 		<?php if(get_the_content()):?>
-			<div class="copy column-1">
-				<?php the_content();?>
+			<div class="column-1">
+				<div class="copy row-1">
+					<?php the_content();?>
+				</div><!--.row-1-->
+				<?php $logo = get_field("logo");
+				if($logo):?>
+					<div class="row-2">
+						<img src="<?php echo $logo['url'];?>" alt="<?php echo $logo['alt'];?>">
+					</div><!--.row-3-->
+				<?php endif;?>
 			</div><!--.copy-->
 		<?php endif;?>
 		<?php $link = get_field("link");
@@ -39,10 +47,4 @@
 			</div><!--.column-2-->
 		<?php endif;?>
 	</section><!--.row-2-->
-	<?php $logo = get_field("logo");
-	if($logo):?>
-		<div class="row-3">
-			<img src="<?php echo $logo['url'];?>" alt="<?php echo $logo['alt'];?>">
-		</div><!--.row-3-->
-	<?php endif;?>
 </article><!-- #post-## -->

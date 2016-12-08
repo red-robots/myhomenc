@@ -714,12 +714,24 @@
         padding: 0 6% 0 0;
         float: left;
       }
+      >.row-1 {
+
+      }
+      >.row-2 {
+        margin-top: 20px;
+        @media screen and (min-width: $tabwidth) {
+          margin-top: 30px;
+        }
+        img {
+          display: block;
+        }
+      }
     }
     > .column-2 {
       width: 100%;
       background-color: $color__mhn-bright-blue;
       color: white;
-      margin: 30px 0 0 0;
+      margin: 20px 0 0 0;
       @media screen and (min-width: $tabwidth) {
         margin: 0;
         width: 40%;
@@ -753,12 +765,6 @@
           }
         }
       }
-    }
-  }
-  >.row-3 {
-    margin-top: 30px;
-    img {
-      display: block;
     }
   }
 }

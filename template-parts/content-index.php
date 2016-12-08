@@ -77,7 +77,7 @@
 		<section class="row-3">
 			<?php foreach ( $logos as $logo ): ?>
 				<?php if ( $logo['image'] ): ?>
-					<div class="logo" style="background-image:url(<?php echo $logo['image']['url']; ?>);">
+					<div class="logo js-blocks" style="background-image:url(<?php echo $logo['image']['url']; ?>);">
 						<?php if ( $logo['link'] ): ?>
 						<a href="<?php echo $logo['link']; ?>">
 							<?php endif; ?>

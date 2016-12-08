@@ -18,7 +18,7 @@
 	</header><!-- .entry-header -->
 	<div class="row-2">
 		<?php $paged= $paged === 0?1:$paged;
-		$args = array('post_type'=>'post',"posts_per_page"=>1,"paged"=>$paged,"order"=>"DESC");
+		$args = array('post_type'=>'post',"posts_per_page"=>6,"paged"=>$paged,"order"=>"DESC");
 		$query = new WP_Query($args);
 		if($query->have_posts()):
 			$count=0;?>

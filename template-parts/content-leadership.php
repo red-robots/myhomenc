@@ -24,7 +24,7 @@
 			</header>
 		<?php endif;?>
 		<?php $paged= $paged === 0?1:$paged;
-		$args = array('post_type'=>'leaders',"posts_per_page"=>1,"paged"=>$paged,"order"=>"DESC");
+		$args = array('post_type'=>'leaders',"posts_per_page"=>8,"paged"=>$paged,"order"=>"DESC");
 		$query = new WP_Query($args);
 		if($query->have_posts()):
 			$count = 0;?>
@@ -79,10 +79,10 @@
 		<?php endif;?>
 		<?php if($agencies_gallery):
 			$count = 0;?>
-			<div class="wrapper">
+			<div class="wrapper clear-bottom">
 				<?php foreach($agencies_gallery as $agency):
 					if($agency['image']):?>
-						<div class="agency count-<?php echo $count+1;?>">
+						<div class="agency js-blocks count-<?php echo $count+1;?>" style="background-image: url(<?php echo $agency['image']['url'];?>);">
 							<?php if($agency['link']):?>
 								<a href="<?php echo $agency['link'];?>" target="_blank">
 							<?php endif;?>

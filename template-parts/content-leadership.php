@@ -24,35 +24,44 @@
 			</header>
 		<?php endif;?>
 		<?php $paged= $paged === 0?1:$paged;
-		$args = array('post_type'=>'leadership',"posts_per_page"=>8,"paged"=>$paged,"order"=>"DESC");
+		$args = array('post_type'=>'leaders',"posts_per_page"=>1,"paged"=>$paged,"order"=>"DESC");
 		$query = new WP_Query($args);
-		if($query->have_posts()):?>
-			<div class="wrapper">
+		if($query->have_posts()):
+			$count = 0;?>
+			<div class="wrapper clear-bottom">
 				<?php while($query->have_posts()):$query->the_post();
 					$image = get_field("image");
 					$title = get_field("title");
 					$phone = get_field("phone");
 					$email = get_field("email"); ?>
-					<div class="leader js-blocks">
-						<img src="<?php echo $image['url'];?>" alt="<?php echo $image['alt'];?>">
-						<div class="info">
-							<h3><?php echo the_title();?></h3>
-							<?php if($title):?>
-								<div class="title"><?php echo $title;?></div><!--.title-->
-							<?php endif;?>
-							<?php if($phone):?>
-								<div class="phone"><?php echo $phone;?></div><!--.phone-->
-							<?php endif;?>
-							<?php if($email):?>
-								<div class="email">
-									<a href="<?php echo "mailto:".$email;?>" target="_blank">
-										<i class="fa fa-envelope"></i>
-									</a>
-								</div><!--.title-->
-							<?php endif;?>
-						</div><!--.info-->
+					<div class="leader js-blocks count-<?php echo $count+1;?>">
+						<div class="wrapper">
+							<img src="<?php echo $image['url'];?>" alt="<?php echo $image['alt'];?>">
+							<div class="info">
+								<div class="wrapper">
+								<header><h3><?php echo the_title();?></h3></header>
+								<?php if($title):?>
+									<div class="title"><?php echo $title;?></div><!--.title-->
+								<?php endif;?>
+								<?php if($phone):?>
+									<div class="phone"><?php echo $phone;?></div><!--.phone-->
+								<?php endif;?>
+								<?php if($email):?>
+									<div class="email">
+										<a href="<?php echo "mailto:".$email;?>" target="_blank">
+											<i class="fa fa-envelope"></i>
+										</a>
+									</div><!--.title-->
+								<?php endif;?>
+								</div><!--.wrapper-->
+								<div class="close clear-bottom">
+									<img src="" alt="x icon">
+								</div><!--.close-->
+							</div><!--.info-->
+						</div><!--.wrapper-->
 					</div><!--.leader-->
-				<?php endwhile;?>
+				<?php $count++;
+				endwhile;?>
 			</div><!--.wrapper-->
 			<nav class="pagination clear-bottom">
 				<?php pagi_posts_nav($query);?>
@@ -68,11 +77,12 @@
 				<h2><?php echo $agencies_header;?></h2>
 			</header>
 		<?php endif;?>
-		<?php if($agencies_gallery):?>
+		<?php if($agencies_gallery):
+			$count = 0;?>
 			<div class="wrapper">
 				<?php foreach($agencies_gallery as $agency):
 					if($agency['image']):?>
-						<div class="agency">
+						<div class="agency count-<?php echo $count+1;?>">
 							<?php if($agency['link']):?>
 								<a href="<?php echo $agency['link'];?>" target="_blank">
 							<?php endif;?>
@@ -82,7 +92,8 @@
 							<?php endif;?>
 						</div><!--.agency-->
 					<?php endif;?>
-				<?php endforeach;?>
+				<?php $count++;
+				endforeach;?>
 			</div><!--.wrapper-->
 		<?php endif;?>
 	</div><!--.row-3-->

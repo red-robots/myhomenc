@@ -25,34 +25,40 @@ jQuery(document).ready(function ($) {
 	------------------------------------*/
     // The slider being synced must be initialized first
 
-    $slides = $('#carousel .slides .slide');
-    $slides.eq(0).addClass("active");
-    $('#slider').flexslider({
-        animation: "slide",
-        controlNav: false,
-        animationLoop: true,
-        slideshow: true,
-        before: function(){
-            $active_slide = $('#slider').find('ul.slides > li.flex-active-slide');
-            var max_slides = $('#slider').find('ul.slides > li').not('.clone').length;
-            var index = $('#slider').find('ul.slides > li').not('.clone').index($active_slide);
-            if(max_slides>1) {
-                $slides.removeClass("active");
-                index = (index + 1) === max_slides ? 0 : index + 1;
-                $slides.eq(index).addClass("active");
-            }
-        },
-        slideshowSpeed: 4000
-    });
-    $sliderdata = $('#slider').data('flexslider');
-    $slides.click(function(){
-        var $this = $(this);
+    (function() {
         $slides = $('#carousel .slides .slide');
-        $slides.removeClass("active");
-        $this.addClass("active");
-        $sliderdata.flexAnimate($this.index());
-        $sliderdata.pause();
-    });
+        $slides.eq(0).addClass("active");
+        slider_flag = false;
+        $('#slider').flexslider({
+            animation: "slide",
+            controlNav: false,
+            animationLoop: true,
+            slideshow: true,
+            before: function () {
+                if (!slider_flag) {
+                    $active_slide = $('#slider').find('ul.slides > li.flex-active-slide');
+                    var max_slides = $('#slider').find('ul.slides > li').not('.clone').length;
+                    var index = $('#slider').find('ul.slides > li').not('.clone').index($active_slide);
+                    if (max_slides > 1) {
+                        $slides.removeClass("active");
+                        index = (index + 1) === max_slides ? 0 : index + 1;
+                        $slides.eq(index).addClass("active");
+                    }
+                }
+            },
+            slideshowSpeed: 4000
+        });
+        $sliderdata = $('#slider').data('flexslider');
+        $slides.click(function () {
+            var $this = $(this);
+            $slides = $('#carousel .slides .slide');
+            $slides.removeClass("active");
+            $this.addClass("active");
+            slider_flag = true;
+            $sliderdata.flexAnimate($this.index());
+            $sliderdata.pause();
+        });
+    })();
 	
 	/*
 	*
@@ -104,5 +110,21 @@ jQuery(document).ready(function ($) {
             $('#masthead >.wrapper  >.column-1 >.hamburger').addClass("toggled-on");
         }
     });
+
+    (function() {
+        $leaders = $('.template-leadership >.row-2 >.wrapper .leader');
+        $leaders.click(function () {
+            if (window.innerWidth < 600) {
+                $(this).find('.info').eq(0).addClass('toggled-on');
+            }
+        });
+        $leaders.find('.close').click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (window.innerWidth < 600) {
+                $(this).parents('.info').eq(0).removeClass('toggled-on');
+            }
+        });
+    })();
 
 });// END #####################################    END

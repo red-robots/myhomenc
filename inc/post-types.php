@@ -36,7 +36,7 @@ function js_custom_init()
     'supports' => array('title','editor','custom-fields','thumbnail'),
 	
   ); 
-  register_post_type('leadership',$args); // name used in query
+  register_post_type('leaders',$args); // name used in query
   
   // Add more between here
   

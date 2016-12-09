@@ -55,9 +55,12 @@
 								<?php endif;?>
 								</div><!--.wrapper-->
 								<div class="close clear-bottom">
-									<img src="" alt="x icon">
+									<i class="fa fa-times"></i>
 								</div><!--.close-->
 							</div><!--.info-->
+							<div class="open">
+								<i class="fa fa-plus"></i>
+							</div>
 						</div><!--.wrapper-->
 					</div><!--.leader-->
 				<?php $count++;

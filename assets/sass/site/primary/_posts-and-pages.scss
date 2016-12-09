@@ -54,6 +54,7 @@
                   margin: 0;
                   font-size: 30px;
                   padding: 0 20px 0 2px;
+                  color: $color__text-main;
                   @media screen and (min-width: $tabwidth) {
                     font-size: 25px;
                   }
@@ -285,6 +286,7 @@
             font-size: 12px;
             font-weight: 300;
             text-transform: uppercase;
+            color: white;
             @media screen and (min-width: 350px) {
               font-size: 14px;
             }
@@ -424,10 +426,8 @@
           img {
             width: 100%;
             display: block;
-            cursor: pointer;
             @media screen and (min-width: $tabwidth) {
               @include flexbox-flex(0, 0, auto);
-              cursor: auto;
             }
           }
           .info {
@@ -437,6 +437,7 @@
             left: 0;
             width: 100%;
             height: 100%;
+            z-index: 2;
             color: white;
             background-color: $color__mhn-bright-blue;
             @include flexbox-align-content(stretch);
@@ -496,13 +497,33 @@
             .close {
               @include flexbox-flex(0, 0, auto);
               @include flexbox-align-self(flex-end);
-              padding: 0 20px 20px 20px;
+              padding: 0 10px 5px 10px;
+              font-size: 25px;
+              cursor: pointer;
               @media screen and (min-width: $tabwidth) {
                 display: none;
               }
-              img {
-                float: right;
+              i {
+
               }
+            }
+          }
+          .open {
+            background-color: $color__mhn-bright-blue;
+            padding: 5px 10px;
+            font-size: 25px;
+            color: white;
+            display: inline-block;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: 1;
+            cursor: pointer;
+            @media screen and (min-width: $tabwidth) {
+              display: none;
+            }
+            i {
+
             }
           }
         }

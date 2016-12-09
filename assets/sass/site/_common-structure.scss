@@ -71,7 +71,7 @@ h3 {
   }
 }
 #masthead {
-  padding: 20px 5% 25px 5%;
+  padding: 20px 10% 25px 10%;
   background-color: black;
   border-top: 2px solid $color__mhn-bright-blue;
   color: white;
@@ -124,12 +124,19 @@ h3 {
         display: block;
         width: 12%;
         float: right;
-        margin-top: 8%;
+        margin-top: 6%;
+        font-size: 40px;
+        font-size: 12vw;
+        line-height: 1;
+        color: $color__mhn-bright-blue;
+        @media screen and (min-width: 350px) {
+          font-size: 50px;
+          font-size: 12vw;
+        }
         @media screen and (min-width: $tabwidth) {
           display: none;
         }
-        img {
-          width: 100%;
+        i {
           display: block;
         }
       }

@@ -28,7 +28,7 @@
 				<a href="<?php bloginfo( 'url' ); ?>"><img
 						src="<?php echo get_template_directory_uri() . "/images/logo.png"; ?>" alt="logo"></a>
 				<div class="hamburger">
-					<img src="<?php echo get_template_directory_uri() . "/images/hamburger.jpg"; ?>" alt="hamburger">
+					<i class="fa fa-bars"></i>
 				</div><!--.hamburger-->
 			</div>
 			<div class="column-2">

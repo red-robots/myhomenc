@@ -113,9 +113,9 @@ jQuery(document).ready(function ($) {
 
     (function() {
         $leaders = $('.template-leadership >.row-2 >.wrapper .leader');
-        $leaders.click(function () {
+        $leaders.find('.open').click(function () {
             if (window.innerWidth < 600) {
-                $(this).find('.info').eq(0).addClass('toggled-on');
+                $(this).parents('.leader').eq(0).find('.info').eq(0).addClass('toggled-on');
             }
         });
         $leaders.find('.close').click(function (e) {

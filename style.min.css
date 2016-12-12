@@ -872,7 +872,8 @@ h3{font-size:15px}
 @media screen and (min-width:600px){.template-index>.row-3 .logo{width:50%;float:left}
 }@media screen and (min-width:900px){.template-index>.row-3 .logo{width:25%}
 }.template-index>.row-3 .logo:first-child{margin:0 auto}
-.template-index>.row-3 .logo:hover{background-size:90% auto}
+@media screen and (min-width:600px){.template-index>.row-3 .logo:first-child{margin:10px auto 0 auto}
+}.template-index>.row-3 .logo:hover{background-size:90% auto}
 .template-index>.row-3 .logo a{display:block}
 .template-index>.row-3 .logo img{display:block;width:100%;opacity:0}
 .template-index>.row-4 .column-1,.template-index>.row-4 .column-2,.template-index>.row-4 .column-3{position:relative;margin:0;color:white;width:100%;overflow:hidden}

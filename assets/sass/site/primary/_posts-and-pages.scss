@@ -211,6 +211,9 @@
         }
         &:first-child {
           margin: 0 auto;
+          @media screen and (min-width: $tabwidth) {
+            margin: 10px auto 0 auto;
+          }
         }
         &:hover {
           background-size: 90% auto;

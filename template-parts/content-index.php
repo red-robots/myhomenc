@@ -126,7 +126,7 @@
 											<h2><?php echo $title; ?></h2>
 										</header>
 									<?php endif; ?>
-									<?php if ( $copy || $interal ):
+									<?php if ( $copy || $internal ):
 										if ( $internal && !$copy):
 											$copy = $internal->post_title;
 										endif; ?>

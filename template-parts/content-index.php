@@ -127,7 +127,7 @@
 										</header>
 									<?php endif; ?>
 									<?php if ( $copy || $interal ):
-										if ( $internal ):
+										if ( $internal && !$copy):
 											$copy = $internal->post_title;
 										endif; ?>
 										<div class="copy"><?php echo $copy; ?></div><!--.copy-->
@@ -189,7 +189,7 @@
 										</header>
 									<?php endif; ?>
 									<?php if ( $copy || $internal ):
-										if ( $internal ):
+										if ( $internal && !$copy ):
 											$copy = $internal->post_title;
 										endif; ?>
 										<div class="copy"><?php echo $copy; ?></div><!--.copy-->
@@ -251,7 +251,7 @@
 										</header>
 									<?php endif; ?>
 									<?php if ( $copy || $internal ):
-										if ( $internal ):
+										if ( $internal && !$copy ):
 											$copy = $internal->post_title;
 										endif; ?>
 										<div class="copy"><?php echo $copy; ?></div><!--.copy-->

@@ -515,15 +515,21 @@
                 font-size: 18px;
               }
               .address {
-                font-size: 13px;
+                font-size: 15px;
                 margin-bottom: 20px;
+                @media screen and (min-width: $tabwidth) {
+                  font-size: 13px;
+                }
                 @media screen and (min-width: $midwidth) {
                   font-size: 15px;
                 }
               }
               .directions {
                 margin-bottom: 5px;
-                font-size: 12px;
+                font-size: 13px;
+                @media screen and (min-width: $tabwidth) {
+                  font-size: 12px;
+                }
                 @media screen and (min-width: $midwidth) {
                   font-size: 13px;
                 }
@@ -534,8 +540,11 @@
               }
               .email {
                 margin-bottom: 5px;
-                font-size: 12px;
+                font-size: 13px;
                 word-break: break-all;
+                @media screen and (min-width: $tabwidth) {
+                  font-size: 12px;
+                }
                 @media screen and (min-width: $midwidth) {
                   font-size: 13px;
                 }
@@ -545,7 +554,10 @@
                 }
               }
               .phone {
-                font-size: 12px;
+                font-size: 13px;
+                @media screen and (min-width: $tabwidth) {
+                  font-size: 12px;
+                }
                 @media screen and (min-width: $midwidth) {
                   font-size: 13px;
                 }

@@ -4518,7 +4518,7 @@ h3 {
           .template-contact > .row-2 > .column-2 > .wrapper .row-1 > .column-1 img, .template-contact > .row-2 > .column-2 > .wrapper .row-2 > .column-1 img, .template-contact > .row-2 > .column-2 > .wrapper .row-3 > .column-1 img {
             width: 100%;
             display: block; }
-            @media screen and (min-width: 600px) {
+            @media screen and (min-width: 900px) {
               .template-contact > .row-2 > .column-2 > .wrapper .row-1 > .column-1 img, .template-contact > .row-2 > .column-2 > .wrapper .row-2 > .column-1 img, .template-contact > .row-2 > .column-2 > .wrapper .row-3 > .column-1 img {
                 opacity: 0; } }
         .template-contact > .row-2 > .column-2 > .wrapper .row-1 > .column-2, .template-contact > .row-2 > .column-2 > .wrapper .row-2 > .column-2, .template-contact > .row-2 > .column-2 > .wrapper .row-3 > .column-2 {

@@ -489,7 +489,7 @@
             img {
               width: 100%;
               display: block;
-              @media screen and (min-width: $tabwidth) {
+              @media screen and (min-width: $midwidth) {
                 opacity: 0;
               }
             }

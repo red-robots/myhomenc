@@ -4941,7 +4941,7 @@ h3 {
 
 .template-sites > .row-2 > .column-1 {
   width: 100%; }
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 900px) {
     .template-sites > .row-2 > .column-1 {
       width: 60%;
       padding: 0 6% 0 0;
@@ -4959,7 +4959,7 @@ h3 {
   background-color: #159acd;
   color: white;
   margin: 20px 0 0 0; }
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 900px) {
     .template-sites > .row-2 > .column-2 {
       margin: 0;
       width: 40%;
@@ -4969,7 +4969,7 @@ h3 {
     text-decoration: none;
     display: block;
     padding: 30px 20px; }
-    @media screen and (min-width: 600px) {
+    @media screen and (min-width: 900px) {
       .template-sites > .row-2 > .column-2 a {
         padding: 50px 30px; } }
     .template-sites > .row-2 > .column-2 a > .wrapper {
@@ -5005,7 +5005,7 @@ h3 {
         -webkit-flex: 0 0 auto;
         -ms-flex: 0 0 auto;
         flex: 0 0 auto;
-        font-size: 50px;
+        font-size: 80px;
         line-height: 1; }
 
 /*--------------------------------------------------------------

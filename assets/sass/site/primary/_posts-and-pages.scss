@@ -945,7 +945,7 @@
   >.row-2 {
     >.column-1 {
       width: 100%;
-      @media screen and (min-width: $tabwidth) {
+      @media screen and (min-width: 900px) {
         width: 60%;
         padding: 0 6% 0 0;
         float: left;
@@ -968,7 +968,7 @@
       background-color: $color__mhn-bright-blue;
       color: white;
       margin: 20px 0 0 0;
-      @media screen and (min-width: $tabwidth) {
+      @media screen and (min-width: 900px) {
         margin: 0;
         width: 40%;
         float: right;
@@ -978,7 +978,7 @@
         text-decoration: none;
         display: block;
         padding: 30px 20px;
-        @media screen and (min-width: $tabwidth) {
+        @media screen and (min-width: 900px) {
           padding: 50px 30px;
         }
         > .wrapper {
@@ -996,7 +996,7 @@
           }
           > .column-2 {
             @include flexbox-flex(0, 0, auto);
-            font-size: 50px;
+            font-size: 80px;
             line-height:1;
           }
         }

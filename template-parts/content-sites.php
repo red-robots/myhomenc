@@ -40,7 +40,7 @@
 							<?php echo $link_text;?>
 						</div><!--.column-1-->
 						<div class="column-2">
-							<i class="fa fa-chevron-right"></i>
+							<i class="fa fa-angle-right"></i>
 						</div><!--.column-2-->
 					</div><!--.wrapper-->
 				</a>

@@ -346,8 +346,8 @@
 }
 .template-sites, .template-page, .template-news,
 .template-news-single, .template-leadership, .template-contact, .error-404 {
-  background-position: top center;
-  background-size: 100% auto;
+  background-position: center;
+  background-size: cover;
   background-repeat: no-repeat;
   padding: 20px;
   @media screen and (min-width: $tabwidth) {

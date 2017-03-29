@@ -900,7 +900,7 @@ h3{font-size:15px}
 @media screen and (min-width:350px){.template-index>.row-4 .column-1 .info .link,.template-index>.row-4 .column-2 .info .link,.template-index>.row-4 .column-3 .info .link{font-size:16px;margin:20px 0 0 0}
 }@media screen and (min-width:600px){.template-index>.row-4 .column-1 .info .link,.template-index>.row-4 .column-2 .info .link,.template-index>.row-4 .column-3 .info .link{font-size:12px;margin:5px 0 0 0}
 }@media screen and (min-width:1100px){.template-index>.row-4 .column-1 .info .link,.template-index>.row-4 .column-2 .info .link,.template-index>.row-4 .column-3 .info .link{font-size:16px;margin:20px 0 0 0}
-}.template-sites,.template-page,.template-news,.template-news-single,.template-leadership,.template-contact,.error-404{background-position:top center;background-size:100% auto;background-repeat:no-repeat;padding:20px}
+}.template-sites,.template-page,.template-news,.template-news-single,.template-leadership,.template-contact,.error-404{background-position:center;background-size:cover;background-repeat:no-repeat;padding:20px}
 @media screen and (min-width:600px){.template-sites,.template-page,.template-news,.template-news-single,.template-leadership,.template-contact,.error-404{padding:40px 15%}
 }.template-sites>header,.template-page>header,.template-news>header,.template-news-single>header,.template-leadership>header,.template-contact>header,.error-404>header{width:100%;margin:0 0 15px 0;padding:0}
 @media screen and (min-width:600px){.template-sites>header,.template-page>header,.template-news>header,.template-news-single>header,.template-leadership>header,.template-contact>header,.error-404>header{margin:0 0 40px 0}

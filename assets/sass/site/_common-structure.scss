@@ -166,28 +166,44 @@ h3 {
           text-align: right;
           margin: 0;
         }
-        .blue-box {
-          width:30px;
-          height: 30px;
-          margin: 0 15px 20px 0;
+        .blue-circle {
+          width: 40px;
+          height: 40px;
+          @include border-radius(20px);
+          margin: 0 5px 20px 5px;
           background-color: $color__mhn-bright-blue;
-          @include border-radius($size__mhn-round);
           display: inline-block;
           text-align: center;
+          @media screen and (min-width: $tabwidth) {
+            width: 34px;
+            height: 34px;
+            @include border-radius(17px);
+          }
+          &:first-child {
+            margin-left: 0;
+          }
           &:hover {
             cursor: pointer;
           }
           a {
             display: block;
             color: inherit;
-            width: 30px;
-            height: 30px;
+            width: 40px;
+            height: 40px;
+            @media screen and (min-width: $tabwidth) {
+              width: 34px;
+              height: 34px;
+            }
             i {
               display: inline-block;
-              font-size: 22px;
+              font-size: 28px;
               line-height: 1.2;
-              padding: 2px 0 3px 0;
+              padding: 3px 0 2px 0;
               vertical-align: middle;
+              @media screen and (min-width: $tabwidth) {
+                font-size: 22px;
+                padding: 4px 0 2px 0;
+              }
             }
           }
         }

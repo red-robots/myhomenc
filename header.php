@@ -36,12 +36,12 @@
 					<?php $facebook_link = get_field( "facebook_link", "option" );
 					$youtube_link        = get_field( "youtube_link", "option" ); ?>
 					<?php if ( $facebook_link ): ?>
-						<div class="blue-box">
+						<div class="blue-circle">
 							<a href="<?php echo $facebook_link; ?>"><i class="fa fa-facebook"></i></a>
 						</div>
 					<?php endif; ?>
 					<?php if ( $youtube_link ): ?>
-						<div class="blue-box">
+						<div class="blue-circle">
 							<a href="<?php echo $youtube_link; ?>"><i class="fa fa-youtube"></i></a>
 						</div>
 					<?php endif; ?>

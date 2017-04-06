@@ -43,3 +43,22 @@ function js_custom_init()
   // and here
   
   } // close custom post type
+
+/*##############################################
+Custom Taxonomies     */
+add_action( 'init', 'build_taxonomies', 0 );
+
+function build_taxonomies() {
+// custom tax
+	register_taxonomy( 'leaders_type', 'leaders',
+		array(
+			'hierarchical' => true, // true = acts like categories false = acts like tags
+			'label' => 'Leaders Type',
+			'query_var' => true,
+			'show_admin_column' => true,
+			'public' => true,
+			'rewrite' => array( 'slug' => 'leaders-type' ),
+			'_builtin' => true
+		) );
+
+} // End build taxonomies

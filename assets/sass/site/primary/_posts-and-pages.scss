@@ -189,6 +189,7 @@
       margin: 0;
       background-color: $color__mhn-grey;
       padding: 0 20px 20px 20px;
+      width: 100%;
       @media screen and (min-width: $tabwidth) {
         margin: 0 auto 0 auto;
         display: table;
@@ -589,7 +590,7 @@
   }
 }
 .template-leadership {
-  >.row-2 {
+  >.row-2, >.row-3 {
     header {
       h2 {
         margin: 0;
@@ -748,7 +749,7 @@
 
     }
   }
-    >.row-3 {
+  >.row-4,  >.row-5 {
       margin: 20px 0 0 0;
       @media screen and (min-width: $tabwidth) {
         margin: 40px 0 20px 0;
@@ -760,7 +761,7 @@
         }
       }
       >.wrapper {
-        .agency {
+        .technology, .agency {
           width: 100%;
           margin: 20px 0 0 0;
           background-position: center;

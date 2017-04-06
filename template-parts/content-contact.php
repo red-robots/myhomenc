@@ -69,7 +69,7 @@
                         </div><!--.wrapper-->
 						<?php if ( $link ): ?>
                             <div class="link">
-                                <a href="<?php echo $link; ?>"><?php echo $view_agents_tag; ?></a>
+                                <a href="<?php echo $link; ?>" target="_blank"><?php echo $view_agents_tag; ?></a>
                             </div><!--.link-->
 						<?php endif; ?>
                     </div><!--.column-2-->
@@ -118,7 +118,7 @@
                         </div><!--.wrapper-->
 						<?php if ( $link ): ?>
                             <div class="link">
-                                <a href="<?php echo $link; ?>"><?php echo $view_agents_tag; ?></a>
+                                <a href="<?php echo $link; ?>" target="_blank"><?php echo $view_agents_tag; ?></a>
                             </div><!--.link-->
 						<?php endif; ?>
                     </div><!--.column-2-->
@@ -167,7 +167,7 @@
                         </div><!--.wrapper-->
 						<?php if ( $link ): ?>
                             <div class="link">
-                                <a href="<?php echo $link; ?>"><?php echo $view_agents_tag; ?></a>
+                                <a href="<?php echo $link; ?>" target="_blank"><?php echo $view_agents_tag; ?></a>
                             </div><!--.link-->
 						<?php endif; ?>
                     </div><!--.column-2-->

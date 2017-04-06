@@ -69,6 +69,33 @@ h3 {
       }
     }
   }
+  .infusion-field {
+    width: 100%;
+    padding: 5px;
+    @media screen and (min-width: $tinywidth) {
+      width: 50%;
+      float: left;
+    }
+    * {
+      max-width: 100%;
+    }
+  }
+  .infusion-submit {
+    width: 100%;
+    input {
+      width: 100%;
+      border: none;
+      border-radius: 5px;
+      background-color: $color__mhn-bright-blue;
+      font-size: 18px;
+      color: white;
+      text-align: center;
+      box-shadow: none;
+      &:hover {
+        box-shadow: none;
+      }
+    }
+  }
 }
 #masthead {
   padding: 20px 10% 25px 10%;

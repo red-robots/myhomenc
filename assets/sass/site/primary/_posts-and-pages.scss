@@ -523,33 +523,6 @@
       margin: 40px 0 20px 0;
     }
     width: 100%;
-      .infusion-field {
-        width: 100%;
-        padding: 5px;
-        @media screen and (min-width: $tinywidth) {
-          width: 50%;
-          float: left;
-        }
-        * {
-          max-width: 100%;
-        }
-      }
-      .infusion-submit {
-        width: 100%;
-        input {
-          width: 100%;
-          border: none;
-          border-radius: 5px;
-          background-color: $color__mhn-bright-blue;
-          font-size: 18px;
-          color: white;
-          text-align: center;
-          box-shadow: none;
-          &:hover {
-            box-shadow: none;
-          }
-        }
-      }
   }
   >.row-4 {
     margin: 20px 0 0 0;
@@ -1072,17 +1045,6 @@
 .template-page {
   >.row-2 {
 
-  }
-  input[type=submit]{
-    margin-top: 20px;
-    width: 100%;
-    border: none;
-    border-radius: 5px;
-    background-color: #159acd;
-    font-size: 18px;
-    color: white;
-    text-align: center;
-    box-shadow: none;
   }
 }
 .template-sites {

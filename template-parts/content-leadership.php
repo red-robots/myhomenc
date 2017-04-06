@@ -24,7 +24,13 @@
             </header>
 		<?php endif;?>
 		<?php
-		$args = array('post_type'=>'leaders',"posts_per_page"=>-1,"orderby"=>"menu_order","order"=>"DESC");
+		$args = array('post_type'=>'leaders',"posts_per_page"=>-1,"orderby"=>"menu_order","order"=>"DESC",
+		              "tax_query"=>array(array(
+			              "taxonomy"=>"leaders_type",
+			              "field"=>"slug",
+			              "terms"=>"brokers-in-charge"
+		              )
+                  ));
 		$query = new WP_Query($args);
 		if($query->have_posts()):
 			$count = 0;?>
@@ -77,7 +83,13 @@
             </header>
 		<?php endif;?>
 		<?php
-		$args = array('post_type'=>'leaders',"posts_per_page"=>-1,"order"=>"DESC","orderby"=>"menu_order");
+		$args = array('post_type'=>'leaders',"posts_per_page"=>-1,"order"=>"DESC","orderby"=>"menu_order",
+            "tax_query"=>array(array(
+                    "taxonomy"=>"leaders_type",
+                    "field"=>"slug",
+                    "terms"=>"manager"
+                )
+            ));
 		$query = new WP_Query($args);
 		if($query->have_posts()):
 			$count = 0;?>

@@ -749,6 +749,12 @@
 
     }
   }
+  >.row-3 {
+    margin: 20px 0 0 0;
+    @media screen and (min-width: $tabwidth) {
+      margin: 40px 0 20px 0;
+    }
+  }
   >.row-4,  >.row-5 {
       margin: 20px 0 0 0;
       @media screen and (min-width: $tabwidth) {

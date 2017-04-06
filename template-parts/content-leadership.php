@@ -16,7 +16,7 @@
 			<h1><?php the_title(); ?></h1>
 		</div><!--.wrapper-->
 	</header><!-- .entry-header -->
-    <div class="row-2">
+    <section class="row-2">
 		<?php $team_header = get_field("team_header");
 		if($team_header):?>
             <header>
@@ -74,8 +74,8 @@
             </div><!--.wrapper-->
 			<?php wp_reset_postdata();
 		endif;?>
-    </div><!--.row-2-->
-    <div class="row-3">
+    </section><!--.row-2-->
+    <section class="row-3">
 		<?php $manager_header = get_field("manager_header");
 		if($manager_header):?>
             <header>
@@ -133,7 +133,7 @@
             </div><!--.wrapper-->
 			<?php wp_reset_postdata();
 		endif;?>
-    </div><!--.row-3-->
+    </section><!--.row-3-->
     <div class="row-4">
 		<?php $agencies_header = get_field("agencies_header");
 		$agencies_gallery = get_field("agencies_gallery");

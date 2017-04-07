@@ -27,14 +27,14 @@
 			$view_agents_tag = $view_agents_tag ? $view_agents_tag : "";
 			$directions_tag = $directions_tag ? $directions_tag : ""; ?>
             <div class="column-1">
-				<?php $title = get_field( "mm_title" );
+				<?php 
 				$image       = get_field( "mm_image" );
 				$email       = get_field( "mm_email" );
 				$address     = get_field( "mm_address" );
 				$directions  = get_field( "mm_directions" );
 				$phone       = get_field( "mm_phone" );
 				$link        = get_field( "mm_link" ); ?>
-				<?php if ( $title ): ?>
+				<?php if ( $address || $email || $directions || $phone || $link ): ?>
 					<?php if ( $image ): ?>
                         <div class="column-1" style="background-image: url(<?php echo $image['url']; ?>);">
                             <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
@@ -45,7 +45,6 @@
 					<?php endif; ?>
                     <div class="column-2">
                         <div class="wrapper">
-                            <h2><?php echo $title; ?></h2>
 							<?php if ( $address ): ?>
                                 <div class="address">
 									<?php echo $address; ?>
@@ -76,14 +75,14 @@
 				<?php endif; ?>
             </div><!--.row-1-->
             <div class="column-2">
-				<?php $title = get_field( "mth_title" );
+				<?php
 				$image       = get_field( "mth_image" );
 				$email       = get_field( "mth_email" );
 				$address     = get_field( "mth_address" );
 				$directions  = get_field( "mth_directions" );
 				$phone       = get_field( "mth_phone" );
 				$link        = get_field( "mth_link" ); ?>
-				<?php if ( $title ): ?>
+				<?php if ( $address || $email || $directions || $phone || $link ): ?>
 					<?php if ( $image ): ?>
                         <div class="column-1" style="background-image: url(<?php echo $image['url']; ?>);">
                             <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
@@ -94,7 +93,6 @@
 					<?php endif; ?>
                     <div class="column-2">
                         <div class="wrapper">
-                            <h2><?php echo $title; ?></h2>
 							<?php if ( $address ): ?>
                                 <div class="address">
 									<?php echo $address; ?>
@@ -125,14 +123,14 @@
 				<?php endif; ?>
             </div><!--.row-2-->
             <div class="column-3">
-				<?php $title = get_field( "mhl_title" );
+				<?php
 				$image       = get_field( "mhl_image" );
 				$email       = get_field( "mhl_email" );
 				$address     = get_field( "mhl_address" );
 				$directions  = get_field( "mhl_directions" );
 				$phone       = get_field( "mhl_phone" );
 				$link        = get_field( "mhl_link" ); ?>
-				<?php if ( $title ): ?>
+				<?php if ( $address || $email || $directions || $phone || $link ): ?>
 					<?php if ( $image ): ?>
                         <div class="column-1" style="background-image: url(<?php echo $image['url']; ?>);">
                             <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
@@ -143,7 +141,6 @@
 					<?php endif; ?>
                     <div class="column-2">
                         <div class="wrapper">
-                            <h2><?php echo $title; ?></h2>
 							<?php if ( $address ): ?>
                                 <div class="address">
 									<?php echo $address; ?>

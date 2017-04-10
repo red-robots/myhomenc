@@ -133,6 +133,7 @@
               @include flexbox-wrap(nowrap);
               @include flex-direction(column);
               padding: 0;
+              width: calc(100% - 15px);
             }
             span {
               display: block;

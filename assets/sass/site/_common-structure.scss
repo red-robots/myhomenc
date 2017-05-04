@@ -241,7 +241,7 @@ h3 {
           width: 137px;
           margin: 0 0 20px 0;
           vertical-align: top;
-          label {
+          >.wrapper {
             height: 30px;
             width: 100%;
             .screen-reader-text {
@@ -259,11 +259,29 @@ h3 {
               background-color: black;
               border: 1px solid $color__mhn-bright-blue;
               color: white;
-              &::-webkit-input-placeholder, &::-moz-placeholder, &:-moz-placeholder, &:-ms-input-placeholder {
-                color: white;
-                font-size: 10px;
-                line-height: 1.6;
-              }
+            }
+            input::-webkit-input-placeholder {
+              color: white;
+              font-size: 10px;
+              line-height: 1.6;
+
+            }
+            input::-moz-placeholder {
+              color: white;
+              font-size: 10px;
+              line-height: 1.6;
+
+            }
+            input:-moz-placeholder {
+              color: white;
+              font-size: 10px;
+              line-height: 1.6;
+
+            }
+            input:-ms-input-placeholder {
+              color: white;
+              font-size: 10px;
+              line-height: 1.6;
             }
           }
         }
@@ -499,6 +517,19 @@ h3 {
           }
         }
       }
+    }
+  }
+}
+#colorbox {
+  overflow: visible !important;
+  #cboxWrapper {
+    overflow: visible;
+    #cboxClose {
+      text-indent: 0;
+      top: -50px;
+      right: 0px;
+      font-size: 25px;
+      color: white;
     }
   }
 }

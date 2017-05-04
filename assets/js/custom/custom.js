@@ -68,9 +68,19 @@ jQuery(document).ready(function ($) {
 	$('a.colorbox-video').colorbox({
 		iframe: true,
 		width: '80%', 
-		height: '80%'
+		height: window.innerWidth*0.8*.5625+"px",
+        close: '<i class="fa fa-close"></i>',
+        onLoad: function(){
+		    $('#colorbox iframe').trigger('click');
+        }
 	});
-	
+
+	$(window).on('resize',function(){
+        $.colorbox.resize({
+            width: "80%",
+            height: window.innerWidth*0.8*.5625+"px",
+        });
+    });
 	/*
 	*
 	*	Isotope with Images Loaded

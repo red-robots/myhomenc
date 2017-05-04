@@ -347,7 +347,7 @@
   }
 }
 .template-sites, .template-page, .template-news,
-.template-news-single, .template-leadership, .template-contact, .error-404, .template-search {
+.template-news-single, .template-leadership, .template-contact, .error-404, .template-search, .template-careers {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1046,6 +1046,38 @@
 .template-page {
   >.row-2 {
 
+  }
+}
+.template-careers {
+  >.row-2, >.row-3  {
+    margin: 0 0 15px 0;
+    @media screen and (min-width: $tabwidth) {
+      margin: 0 0 40px 0;
+    }
+    &:last-child {
+      margin: 0;
+    }
+  }
+  >.row-3 {
+    >.column-1 {
+      @media screen and (min-width: 900px) {
+        width: 65%;
+        float: left;
+        margin-right: 5%;
+      }
+    }
+    >.column-2 {
+      margin-top: 15px;
+      @media screen and (min-width: 900px) {
+        width: 30%;
+        float: left;
+        margin-top: 0;
+      }
+      img {
+        width: 100%;
+        display: block;
+      }
+    }
   }
 }
 .template-search {

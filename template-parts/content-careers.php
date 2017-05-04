@@ -16,12 +16,31 @@
 			<h1><?php the_title(); ?></h1>
 		</div><!--.wrapper-->
 	</header><!-- .row-1 -->
-    <section class="row-2">
-
-    </section><!--.row-2-->
 	<?php if(get_the_content()):?>
-		<section class="row-3 copy">
+		<section class="row-2 copy">
 			<?php the_content();?>
 		</section><!--.row-2-->
 	<?php endif;?>
+    <?php $form = get_field("form");
+    $column_2_image = get_field("column_2_image");
+    if($form||$column_2_image):?>
+        <section class="row-3 clear-bottom">
+            <div class="column-1 copy">
+                <?php if($form):
+                    echo $form;
+                endif;?>
+            </div><!--.column-1-->
+            <div class="column-2">
+                <?php if($column_2_image):?>
+                    <img src="<?php echo $column_2_image['sizes']['large'];?>" alt="<?php echo $column_2_image['alt'];?>">
+                <?php endif;?>
+            </div><!--.column-2-->
+        </section><!--.row-2-->
+	<?php endif;
+	$after_text = get_field("after_text");
+	if($after_text):?>
+        <div class="row-4 copy">
+            <?php echo $after_text;?>
+        </div><!--.row-4-->
+    <?php endif;?>
 </article><!-- #post-## -->

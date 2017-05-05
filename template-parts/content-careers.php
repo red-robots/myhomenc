@@ -22,8 +22,8 @@
 		</section><!--.row-2-->
 	<?php endif;?>
     <?php $form = get_field("form");
-    $column_2_image = get_field("column_2_image");
-    if($form||$column_2_image):?>
+    $images = get_field("images");
+    if($form||$images):?>
         <section class="row-3 clear-bottom">
             <div class="column-1 copy">
                 <?php if($form):
@@ -31,8 +31,14 @@
                 endif;?>
             </div><!--.column-1-->
             <div class="column-2">
-                <?php if($column_2_image):?>
-                    <img src="<?php echo $column_2_image['sizes']['large'];?>" alt="<?php echo $column_2_image['alt'];?>">
+                <?php if($images):?>
+                    <div class="flexslider">
+                        <ul class="slides">
+                            <?php foreach($images as $row):?>
+                            <li><img src="<?php echo $row['image']['sizes']['large'];?>" alt="<?php echo $row['image']['alt'];?>"></li>
+                            <?php endforeach;?>
+                        </ul>
+                    </div><!--.flexslider-->
                 <?php endif;?>
             </div><!--.column-2-->
         </section><!--.row-2-->

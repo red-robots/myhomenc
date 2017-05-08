@@ -104,3 +104,23 @@ function acstarter_widgets_init() {
   ) );
 }
 add_action( 'widgets_init', 'acstarter_widgets_init' );
+
+
+ add_image_size( 'agent_feed', 350, 451, true );
+add_image_size( 'single_agent', 290, 433, true );
+
+function custom_field_excerpt() {
+	global $post;
+	$author = get_queried_object();
+	$user_ID = $author->ID;
+	$text = get_field('custom_bio', 'user_'.$user_ID); 
+	if ( '' != $text ) {
+		$text = strip_shortcodes( $text );
+		$text = apply_filters('the_content', $text);
+		$text = str_replace(']]>', ']]>', $text);
+		$excerpt_length = 40; // 20 words
+		$excerpt_more = apply_filters('excerpt_more', ' ' . '...');
+		$text = wp_trim_words( $text, $excerpt_length, $excerpt_more );
+	}
+	 return apply_filters('the_excerpt', $text);
+}

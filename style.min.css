@@ -849,7 +849,7 @@ h3{font-size:15px}
 .template-index>.row-1{position:relative}
 .template-index>.row-1 #slider{width:100%}
 .template-index>.row-1 #slider ul.slides{width:100%;padding:0;margin:0}
-.template-index>.row-1 #slider ul.slides li{position:relative}
+.template-index>.row-1 #slider ul.slides li{position:relative;display:none}
 .template-index>.row-1 #slider ul.slides li img{display:block;width:150%;height:auto;max-width:200%}
 @media screen and (min-width:750px){.template-index>.row-1 #slider ul.slides li img{width:100%;height:auto}
 }.template-index>.row-1 #slider ul.slides li .info{padding:15px 25px}

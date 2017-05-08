@@ -33,7 +33,7 @@ $is_page = $wp_query->post_count === 1 && get_the_ID() === 516 ? true:false;?>
             <section class="row-3">
                 <?php while(have_posts()): the_post();?>
                     <div class="item">
-                        <h2><a href="<?php get_the_permalink();?>"><?php the_title();?></a></h2>
+                        <h2><a href="<?php echo get_the_permalink();?>"><?php the_title();?></a></h2>
                     </div><!--.item-->
                 <?php endwhile;?>
             </section><!--.row-3-->

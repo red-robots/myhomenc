@@ -1059,6 +1059,7 @@ h3{font-size:15px}
 }.template-careers>.row-3>.column-2{margin-top:15px}
 @media screen and (min-width:900px){.template-careers>.row-3>.column-2{width:30%;float:left;margin-top:0}
 }.template-careers>.row-3>.column-2 .flexslider{border:0;background-color:transparent}
+.template-careers>.row-3>.column-2 .flexslider li{display:none}
 .template-careers>.row-3>.column-2 .flexslider .flex-direction-nav{display:none}
 .template-careers>.row-3>.column-2 .flexslider img{width:100%;display:block}
 .template-search>.row-2{margin:0 0 15px 0}

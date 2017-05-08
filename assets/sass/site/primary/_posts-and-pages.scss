@@ -1077,6 +1077,9 @@
       .flexslider {
         border: none;
         background-color: transparent;
+        li {
+          display: none;
+        }
         .flex-direction-nav {
           display: none;
         }

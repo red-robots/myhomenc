@@ -151,4 +151,18 @@ jQuery(document).ready(function ($) {
         });
     })();
 
+    $('.flexslider4').flexslider({
+		animation: "fade",
+		slideshowSpeed: 5000,
+        controlNav: false,
+        directionNav: false,
+		smoothHeight: true
+	});
+    $('.flexslider3').flexslider({
+		animation: "slide",
+        controlNav: false,
+        directionNav: false,
+		slideshowSpeed: 6000,
+	}); 
+
 });// END #####################################    END

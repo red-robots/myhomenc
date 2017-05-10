@@ -124,3 +124,9 @@ function custom_field_excerpt() {
 	}
 	 return apply_filters('the_excerpt', $text);
 }
+
+function bella_remove_has_published_from_api($prepared_args,$request){
+    unset($prepared_args['has_published_posts']);
+    return $prepared_args;
+}
+add_filter( 'rest_user_query', 'bella_remove_has_published_from_api',10,2);

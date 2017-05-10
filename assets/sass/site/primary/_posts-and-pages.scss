@@ -1232,6 +1232,7 @@
   }
 }
 .template-agents {
+  
   #page-text {
     margin-bottom: 15px;
   }
@@ -1433,6 +1434,72 @@
     width: 90%;
     margin: 45px auto 0 auto;
   }
+  #facebook-box {
+  width: 100%;
+  float: left;
+  margin: 5px 0px 10px 0px;
+  }
+  .facebook1 {
+  width: 40px;
+  height: 40px;
+  float: left;
+  margin-right: 10px;
+  }
+  .facebook1 a {
+  width: 40px;
+  height: 40px;
+  background-image: url(images/social1.png);
+  background-position: 0 0;
+  display: block;
+  }
+  .facebook1 a:hover {
+  width: 40px;
+  height: 40px;
+  background-image: url(images/social1.png);
+  background-position: 0 -40px;
+  display: block;
+  }
+  .youtube1 {
+  width: 40px;
+  height: 40px;
+  float: left;
+  margin-right: 10px;
+  }
+  .youtube1 a {
+  width: 40px;
+  height: 40px;
+  background-image: url(images/social2.png);
+  background-position: 0 0;
+  display: block;
+  }
+  .youtube1 a:hover {
+  width: 40px;
+  height: 40px;
+  background-image: url(images/social2.png);
+  background-position: 0 -40px;
+  display: block;
+  }
+  .twitter1 {
+  width: 40px;
+  height: 40px;
+  float: left;
+  margin-right: 10px;
+  }
+  .twitter1 a {
+  width: 40px;
+  height: 40px;
+  background-image: url(images/social5.png);
+  background-position: 0 0;
+  display: block;
+  }
+  .twitter1 a:hover {
+  width: 40px;
+  height: 40px;
+  background-image: url(images/social5.png);
+  background-position: 0 -40px;
+  display: block;
+  }
+
   .question {
     width: auto;
     float: left;

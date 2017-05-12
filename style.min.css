@@ -845,6 +845,21 @@ h3{font-size:15px}
 #colorbox{overflow:visible !important}
 #colorbox #cboxWrapper{overflow:visible}
 #colorbox #cboxWrapper #cboxClose{text-indent:0;top:-50px;right:0;font-size:25px;color:white}
+#mortgage-calc{padding:0;width:100%}
+#mortgage-calc .form-column{width:50%;float:left}
+#mortgage-calc .mortgage-calc-pad{padding:10%}
+#mortgage-calc .mort-calc-pad{width:100%;height:70px;background-color:rgba(0,0,0,0.8)}
+#mortgage-calc .calculator{border-style:solid;border-color:#fff;border-width:0;border-top:0;border-bottom:0;border-left:0;border-right:0;border:solid;width:90%}
+#mortgage-calc #mortgage-calc-left{width:49%;float:left}
+#mortgage-calc #mortgage-calc-right{width:49%;float:right}
+#mortgage-calc .infusion-field{margin-bottom:25px !important;width:50%;float:left}
+#mortgage-calc .infusion-option{padding-right:15px;float:left}
+#mortgage-calc .infusion-option input{margin:0 15px 0 0}
+#mortgage-calc .infusion-field-input-container{height:25px !important}
+#mortgage-calc .infusion-field-input-container,#mortgage-calc input{border-radius:0;width:85%}
+#mortgage-calc .infusion-submit{width:100%;float:left;margin:20px 0}
+#mortgage-calc .infusion-submit input{width:100%;background-color:#0099cf;color:#fff;border:0;padding:20px 0;box-shadow:none;font-size:16px;border-radius:10px}
+#mortgage-calc .infusion-submit input:hover{background-color:#0099cf}
 .template-index #slider .flex-next,.template-index #slider .flex-prev,.template-index #carousel .flex-next,.template-index #carousel .flex-prev{display:none}
 .template-index>.row-1{position:relative}
 .template-index>.row-1 #slider{width:100%}

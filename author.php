@@ -14,6 +14,18 @@ get_header(); ?>
 
 
 <?php
+//from var 0=mytownhome, 1=myhomeleasing, 2=mymaison
+$from = 0;
+if(isset($_GET['from'])):
+    switch(sanitize_text_field( $_GET['from'] )):
+        case 'myhomeleasing':
+            $from = 1;
+            break;
+        case 'mymaison':
+            $from = 2;
+            break;
+    endswitch;
+endif;
 // Get the Author Object that contains all the Author's information
 $author = get_queried_object();
 // From that information, we'll get the ID so we can use it to pull Advanced Custom Fields
@@ -36,8 +48,19 @@ $phone2 = get_field( 'cell_phone', 'user_'.$author_id );
 $facebook = get_field( 'facebook_link', 'user_'.$author_id );
 $twitter = get_field( 'twitter_link', 'user_'.$author_id );
 $youtube = get_field( 'youtube_link', 'user_'.$author_id );
-$property_search  = get_field( 'unique_property_search_link', 'user_'.$author_id );
-$my_listings  = get_field( 'my_listings_link', 'user_'.$author_id );
+if($from === 0):
+    $property_search  = get_field( 'unique_property_search_link', 'user_'.$author_id );
+    $my_listings  = get_field( 'my_listings_link', 'user_'.$author_id );
+endif;
+if($from === 1): 
+    $property_search  = get_field( 'unique_property_search_link_my_home_leasing', 'user_'.$author_id );
+    $my_listings  = get_field( 'my_listings_link_my_home_leasing', 'user_'.$author_id );
+endif;
+if($from === 2): 
+    $property_search  = get_field( 'unique_property_search_link_my_maison', 'user_'.$author_id );
+    $my_listings  = get_field( 'my_listings_link_my_maison', 'user_'.$author_id );
+endif;
+
 // Photo stuff  
 $image = get_field( 'photo', 'user_'.$author_id );
 $size = 'single_agent';
@@ -106,26 +129,36 @@ $antispam = antispambot($email);
     </div><!-- single-agent-text1 -->
 
     <div id="single-agent-links">
-        <div class="agent-button-link">
-            <a href="<?php echo $property_search; ?>" target="_blank">PROPERTY SEARCH</a>
-        </div><!-- agent-button -->
-        
-        <div class="agent-button-link">
-            <a href="<?php echo $my_listings; ?>" target="_blank">VIEW MY LISTINGS</a>
-        </div><!-- agent-button -->
-        
-        <div class="agent-button-link">
-            <a href="<?php bloginfo('url'); ?>/mortgage-calculator?iframe=true" class="calculator">MORTGAGE CALCULATOR</a>
-        </div><!-- agent-button -->
+        <?php if($property_search):?>
+            <div class="agent-button-link">
+                <a href="<?php echo $property_search; ?>" target="_blank">PROPERTY SEARCH</a>
+            </div><!-- agent-button -->
+        <?php endif;?>
+        <?php if($my_listings):?>
+            <div class="agent-button-link">
+                <a href="<?php echo $my_listings; ?>" target="_blank">VIEW MY LISTINGS</a>
+            </div><!-- agent-button -->
+        <?php endif;?>
+        <?php if($from!==1):?>
+            <div class="agent-button-link">
+                <a href="<?php bloginfo('url'); ?>/mortgage-calculator?iframe=true" class="calculator">MORTGAGE CALCULATOR</a>
+            </div><!-- agent-button -->
+        <?php endif;?>
     </div><!-- single agent links -->
 
 </div><!-- single-agent-row1 -->
 
 
-
-<div id="single-agent-row2">
-    <?php get_template_part('inc/agent-links'); ?>
-</div><!-- single-agent-row2 -->
+<?php if($from === 0):?>
+    <div id="single-agent-row2">
+        <?php get_template_part('inc/agent-links'); ?>
+    </div><!-- single-agent-row2 -->
+<?php endif;?>
+<?php if($from === 2):?>
+    <div id="single-agent-row2">
+        <?php get_template_part('inc/agent-links-my-maison'); ?>
+    </div><!-- single-agent-row2 -->
+<?php endif;?>
 
 
 

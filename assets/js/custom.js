@@ -8,7 +8,7 @@
 jQuery(document).ready(function ($) {
 	// Colorbox. 
 	// agent link iframes
-	$(".calculator").colorbox({iframe:true, width:"50%", height:"89%",
+	$("a.calculator").colorbox({iframe:true, width:"50%", height:"89%",
         close: '<i class="fa fa-close"></i>'});
 	/*
 	*

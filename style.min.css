@@ -1140,7 +1140,8 @@ h3{font-size:15px}
 .template-agents .agent-photo img:hover{width:100%;-moz-filter:grayscale(0);-ms-filter:grayscale(0);-o-filter:grayscale(0);filter:grayscale(0);-webkit-filter:grayscale(0);filter:none}
 .template-author{margin-top:5px;padding:20px}
 @media screen and (min-width:1200px){.template-author{width:90%;margin:45px auto 0 auto}
-}.template-author #facebook-box{width:100%;float:left;margin:5px 0 10px 0}
+}.template-author h2{margin-bottom:10px;font-size:20px}
+.template-author #facebook-box{width:100%;float:left;margin:5px 0 10px 0}
 .template-author .facebook1{width:40px;height:40px;float:left;margin-right:10px}
 .template-author .facebook1 a{width:40px;height:40px;background-image:url(images/social1.png);background-position:0 0;display:block}
 .template-author .facebook1 a:hover{width:40px;height:40px;background-image:url(images/social1.png);background-position:0 -40px;display:block}

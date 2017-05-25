@@ -58,11 +58,41 @@ $is_page = $wp_query->post_count === 1 && get_the_ID() === 516 ? true:false;?>
             $query = new WP_User_Query($args);
             $agents = $query->get_results();
             if(!empty($agents)): ?>
-                <section class="row-3">
-                    <?php foreach($agents as $agent):?>
-                        <div class="item">
-                            <h2><a href="<?php echo get_author_posts_url($agent->ID);?>"><?php echo $agent->display_name;?></a></h2>
-                        </div><!--.item-->
+                <section class="row-3 clear-bottom">
+                    <?php foreach($agents as $agent):   
+                        $author_id = $agent->ID;
+                        $link = get_author_posts_url($author_id);
+                        $agentName = get_field( 'first_name', 'user_'.$author_id );
+                        $agentName2 = get_field( 'last_name', 'user_'.$author_id );
+                        // email
+                        $image = get_field( 'photo', 'user_'.$author_id );
+                        $size = 'agent_feed';
+                        $thumb = null;
+                        if($image):
+                            $thumb = $image['sizes'][ $size ]; 
+                        endif;?>
+
+                        <div class="agent-profile-box js-blocks">
+                            <?php if($thumb):?>
+                                <img src="<?php echo $thumb; ?>" />
+                            <?php endif;?>
+                            <div class="agent-profile-box-content">
+                                <?php if($agentName && $agentName2):?>
+                                <h2>
+                                <?php
+                                if ($agentName) :
+                                    echo $agentName . ' ';
+                                endif;
+                                if ($agentName2) :
+                                    echo $agentName2;
+                                endif; ?>
+                                </h2>
+                                <?php endif;?>
+                            </div><!-- agent-profile-box-content -->
+                            <?php if($link):?>
+                                <div class="link"><a href="<?php echo $link; ?>"></a></div>
+                            <?php endif;?>
+                        </div><!--  agent-profile-box -->
                     <?php endforeach;?>
                 </section><!--.row-3-->
             <?php else: ?>

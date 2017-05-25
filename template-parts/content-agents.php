@@ -20,7 +20,7 @@
                 <?php the_content(); ?>
                 <div id="agent-search">SEARCH BY NAME
                 <!-- --> 
-                    <form method="get" id="searchform" action="<?php bloginfo('home'); ?>/">
+                    <form method="get" id="searchform" action="<?php bloginfo('url'); ?>/">
                         <div>
                             <input name="s" type="text" id="agent-search1" placeholder="enter name here" value="<?php echo wp_specialchars($s, 1); ?>" size="18" />
                             <input type="hidden" name="search_type" value="agent" />
@@ -60,22 +60,24 @@
                 // loop trough each author
             foreach ($authors as $author) :
             // get all the user's data
-                $author_info = get_userdata($author->ID);
-                $author_id = $author_info->ID;
-                $myField = get_field( 'custom_bio', 'user_'.$author_id );
+                $author_id = $author->ID;
                 $link = get_author_posts_url($author_id);
                 $agentName = get_field( 'first_name', 'user_'.$author_id );
                 $agentName2 = get_field( 'last_name', 'user_'.$author_id );
                 // email
-                $email = get_field( 'email', 'user_'.$author_id );
-                $antispam = antispambot($email);
                 $image = get_field( 'photo', 'user_'.$author_id );
                 $size = 'agent_feed';
-                $thumb = $image['sizes'][ $size ]; ?>
+                $thumb = null;
+                if($image):
+                    $thumb = $image['sizes'][ $size ]; 
+                endif;?>
 
                 <div class="agent-profile-box js-blocks">
-                    <img src="<?php echo $thumb; ?>" />
+                    <?php if($thumb):?>
+                        <img src="<?php echo $thumb; ?>" />
+                    <?php endif;?>
                     <div class="agent-profile-box-content">
+                        <?php if($agentName && $agentName2):?>
                         <h2>
                         <?php
                         if ($agentName) :
@@ -85,9 +87,11 @@
                             echo $agentName2;
                         endif; ?>
                         </h2>
-                        <div><?php //echo $myField; ?></div>
+                        <?php endif;?>
                     </div><!-- agent-profile-box-content -->
-                    <div class="link"><a href="<?php echo $link; ?>"></a></div>
+                    <?php if($link):?>
+                        <div class="link"><a href="<?php echo $link; ?>"></a></div>
+                    <?php endif;?>
                 </div><!--  agent-profile-box -->
 
             <?php                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         endforeach;

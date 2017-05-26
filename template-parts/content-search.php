@@ -25,7 +25,18 @@ $is_page = $wp_query->post_count === 1 && get_the_ID() === 516 ? true:false;?>
     </header><!-- .row-1 -->
     <section class="row-2 copy">
         <?php the_content();?>
-        <?php get_search_form(); ?>
+        <form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
+            <div class="wrapper">
+                <span class="screen-reader-text"><?php echo _x( 'Search for:', 'label' ) ?></span>
+                <input type="search" class="search-field"
+                    placeholder="<?php echo esc_attr_x( 'Search …', 'placeholder' ) ?>"
+                    value="<?php echo get_search_query() ?>" name="s"
+                    title="<?php echo esc_attr_x( 'Search for:', 'label' ) ?>" />
+                <?php if(isset($_GET['search_type'])):?>
+                    <input type="hidden" name="search_type" value="agent">
+                <?php endif;?>
+            </div>
+        </form>
     </section><!--.row-2-->
     <?php if(!$is_page):
         wp_reset_postdata();

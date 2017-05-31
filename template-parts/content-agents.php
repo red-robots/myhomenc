@@ -78,23 +78,22 @@
                     <?php endif;?>
                     <div class="agent-profile-box-content">
                         <?php if($agentName && $agentName2):?>
-                        <h2>
-                        <?php
-                        if ($agentName) :
-                            echo $agentName . ' ';
-                        endif;
-                        if ($agentName2) :
-                            echo $agentName2;
-                        endif; ?>
-                        </h2>
+                            <h2>
+                                <?php
+                                if ($agentName) :
+                                    echo $agentName . ' ';
+                                endif;
+                                if ($agentName2) :
+                                    echo $agentName2;
+                                endif; ?>
+                            </h2>
                         <?php endif;?>
                     </div><!-- agent-profile-box-content -->
                     <?php if($link):?>
                         <div class="link"><a href="<?php echo $link; ?>"></a></div>
                     <?php endif;?>
                 </div><!--  agent-profile-box -->
-
-            <?php                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         endforeach;
+            <?php endforeach;
         endif; ?>
     </section><!-- agent-boxes  -->
 </article>

@@ -689,6 +689,13 @@
 
     }
   }
+  >.row-4 {
+    >header {
+      h2 {
+        margin-bottom: 10px;
+      }
+    }
+  }
 }
 .template-leadership {
   >.row-2, >.row-3 {
@@ -1231,7 +1238,7 @@
     }
   }
 }
-.template-agents, .template-search {
+.template-agents, .template-search, .template-contact >.row-4 .agents {
   
   #page-text {
     margin-bottom: 15px;

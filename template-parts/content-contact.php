@@ -175,15 +175,71 @@
 	<section class="row-3 copy">
         <?php the_content(); ?>
 	</section><!--.row-3-->
-    <section class="row-4">
+    <section class="row-4 clear-bottom">
 		<?php $team_header = get_field("team_header");
 		if($team_header):?>
             <header>
                 <h2><?php echo $team_header;?></h2>
             </header>
 		<?php endif;?>
+		<div class="agents">
+			<?php
+			
+			// WP_User_Query arguments
+			$args = array (
+				'role' => 'Agent',
+				'order' => 'ASC',
+				'orderby' => 'display_name',
+			);
+
+			// Create the WP_User_Query object
+			$wp_user_query = new WP_User_Query($args);
+
+			// Get the results
+			$authors = $wp_user_query->get_results();
+			// Check for results
+			if (!empty($authors)) :
+					// loop trough each author
+				foreach ($authors as $author) :
+				// get all the user's data
+					$author_id = $author->ID;
+					$link = get_author_posts_url($author_id);
+					$agentName = get_field( 'first_name', 'user_'.$author_id );
+					$agentName2 = get_field( 'last_name', 'user_'.$author_id );
+					// email
+					$image = get_field( 'photo', 'user_'.$author_id );
+					$size = 'agent_feed';
+					$thumb = null;
+					if($image):
+						$thumb = $image['sizes'][ $size ]; 
+					endif;?>
+
+					<div class="agent-profile-box js-blocks">
+						<?php if($thumb):?>
+							<img src="<?php echo $thumb; ?>" />
+						<?php endif;?>
+						<div class="agent-profile-box-content">
+							<?php if($agentName && $agentName2):?>
+								<h2>
+									<?php
+									if ($agentName) :
+										echo $agentName . ' ';
+									endif;
+									if ($agentName2) :
+										echo $agentName2;
+									endif; ?>
+								</h2>
+							<?php endif;?>
+						</div><!-- agent-profile-box-content -->
+						<?php if($link):?>
+							<div class="link"><a href="<?php echo $link; ?>"></a></div>
+						<?php endif;?>
+					</div><!--  agent-profile-box -->
+				<?php endforeach;
+			endif; ?>
+		</div><!--.agents-->
 		<?php
-		$args = array('post_type'=>'leaders',"posts_per_page"=>-1,"orderby"=>"menu_order","order"=>"DESC",
+		/*$args = array('post_type'=>'leaders',"posts_per_page"=>-1,"orderby"=>"menu_order","order"=>"DESC",
 		              "tax_query"=>array(array(
 			              "taxonomy"=>"leaders_type",
 			              "field"=>"slug",
@@ -232,6 +288,6 @@
 				endwhile;?>
             </div><!--.wrapper-->
 			<?php wp_reset_postdata();
-		endif;?>
+		endif;*/?>
     </section><!--.row-4-->
 </article><!-- #post-## -->

@@ -1057,7 +1057,22 @@
   }
 }
 .template-careers {
-  >.row-2, >.row-3  {
+
+	button[type=submit]{
+    background-color: #3753A1;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    padding: 10px 15px;
+    color: white;
+    border: none;
+    box-shadow: none;
+    text-shadow: none;
+    display: block;
+    &:hover {
+      background-color: #359DC7;
+    }
+  }
+>.row-2, >.row-3  {
     margin: 0 0 15px 0;
     @media screen and (min-width: $tabwidth) {
       margin: 0 0 40px 0;

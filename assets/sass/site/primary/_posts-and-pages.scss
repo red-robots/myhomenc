@@ -1057,19 +1057,16 @@
   }
 }
 .template-careers {
-
 	button[type=submit]{
-    background-color: #3753A1;
-    -moz-border-radius: 6px;
-    border-radius: 6px;
-    padding: 10px 15px;
-    color: white;
     border: none;
+    border-radius: 5px;
+    background-color: $color__mhn-bright-blue;
+    font-size: 18px;
+    color: white;
+    text-align: center;
     box-shadow: none;
-    text-shadow: none;
-    display: block;
     &:hover {
-      background-color: #359DC7;
+      box-shadow: none;
     }
   }
 >.row-2, >.row-3  {
